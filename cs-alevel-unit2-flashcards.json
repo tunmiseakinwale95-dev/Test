@@ -620,9 +620,67 @@
           "answer": "Straightforward approach trying all possible solutions and selecting best. Simple to implement but often inefficient. Guaranteed to find solution if one exists. Examples: trying all permutations, exhaustive search. Use when: problem size is small, correctness is critical, no better algorithm known."
         }
       ]
+    },
+    {
+      "name": "16. Arrays, Lists & Tuples",
+      "flashcards": [
+        {
+          "question": "What is a 2D array?",
+          "answer": "An array of arrays, representing data in rows and columns like a table or grid. Accessed using two indices: array[row][column]. Used for: matrices, game boards, image data, tables. Example: chessboard is 8x8 2D array."
+        },
+        {
+          "question": "What is a static data structure?",
+          "answer": "Data structure with fixed size allocated at compile time. Size cannot change during execution. Examples: static arrays. Advantages: fast access, simple. Disadvantages: inflexible, wasted space if not full, overflow if too small."
+        },
+        {
+          "question": "What is a dynamic data structure?",
+          "answer": "Data structure that can grow/shrink during execution. Size allocated at runtime. Examples: linked lists, dynamic arrays, trees. Advantages: flexible, efficient memory use. Disadvantages: slower access, more complex implementation, memory management overhead."
+        },
+        {
+          "question": "What is a list data structure?",
+          "answer": "Ordered collection of elements that can grow/shrink. Elements accessed by index. Supports insertion, deletion, searching, iteration. Can be implemented as dynamic array or linked list. Python lists are dynamic arrays."
+        },
+        {
+          "question": "What is a tuple?",
+          "answer": "An immutable ordered collection of elements. Once created, cannot be modified. Elements accessed by index. More memory-efficient than lists. Used for: fixed collections, dictionary keys, returning multiple values. Example: coordinates = (10, 20)."
+        },
+        {
+          "question": "What is the difference between list and tuple?",
+          "answer": "List: mutable (can change), dynamic size, slower, uses more memory, syntax: [1, 2, 3].\nTuple: immutable (cannot change), fixed after creation, faster, more efficient, syntax: (1, 2, 3). Use tuple for data that shouldn't change."
+        }
+      ]
+    },
+    {
+      "name": "17. Notation & Expressions",
+      "flashcards": [
+        {
+          "question": "What is infix notation?",
+          "answer": "Mathematical notation where operator is placed between operands. Standard notation humans use. Example: A + B, (A + B) * C. Requires parentheses for order of operations. Used in most programming languages."
+        },
+        {
+          "question": "What is prefix notation (Polish notation)?",
+          "answer": "Notation where operator comes before operands. No parentheses needed. Example: + A B (means A + B), * + A B C (means (A + B) * C). Used in some programming languages like Lisp. Easy for computers to parse."
+        },
+        {
+          "question": "What is postfix notation (Reverse Polish notation)?",
+          "answer": "Notation where operator comes after operands. No parentheses needed. Example: A B + (means A + B), A B + C * (means (A + B) * C). Easy to evaluate using stack. Used in some calculators and stack-based languages."
+        },
+        {
+          "question": "How do you evaluate postfix expressions?",
+          "answer": "Use a stack. Scan expression left to right: if operand, push to stack; if operator, pop two operands, apply operator, push result. Final stack value is answer. Example: 3 4 + 5 * → push 3, push 4, pop & add (7), push 7, push 5, pop & multiply (35)."
+        },
+        {
+          "question": "How do you convert infix to postfix?",
+          "answer": "Use stack for operators. Scan infix left to right: if operand, output it; if '(', push to stack; if ')', pop until '('; if operator, pop operators with higher/equal precedence, then push current operator. Pop remaining operators. Outputs postfix expression."
+        },
+        {
+          "question": "What is operator precedence?",
+          "answer": "The order in which operators are evaluated in expressions. Higher precedence operators evaluated first. Standard order: parentheses → exponents → multiply/divide → add/subtract. Example: 2 + 3 * 4 = 2 + 12 = 14 (not 20)."
+        }
+      ]
     }
   ],
-  "total_flashcards": 196,
+  "total_flashcards": 208,
   "study_tips": [
     "Practice writing code for each algorithm - don't just memorize",
     "Trace through algorithms with example data to understand how they work",

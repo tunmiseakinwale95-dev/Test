@@ -1,5 +1,19 @@
-# A Level Computer Science - Unit 1: Computer Systems
+# A Level Computer Science - OCR Specification
 ## Comprehensive Study Flashcards
+
+## Available Units
+
+### Unit 1: Computer Systems - **175 Flashcards**
+File: `cs-alevel-unit1-flashcards.json`
+
+### Unit 2: Algorithms and Programming - **196 Flashcards**
+File: `cs-alevel-unit2-flashcards.json`
+
+**Total: 371 Flashcards**
+
+---
+
+# Unit 1: Computer Systems
 
 Total Flashcards: **175**
 
@@ -776,3 +790,551 @@ Columns: step number, variables, conditions
 ---
 
 **Good luck with your studies!** 🎓
+
+---
+---
+
+# Unit 2: Algorithms and Programming
+
+Total Flashcards: **196**
+
+---
+
+## 🧠 Category 1: Computational Thinking
+
+### Q: What is abstraction in computational thinking?
+**A:** The process of removing unnecessary detail and complexity from a problem to focus on the essential features. Involves hiding implementation details and showing only functionality. Examples: using functions without knowing internal workings, database views.
+
+### Q: What is decomposition?
+**A:** Breaking down a complex problem into smaller, more manageable sub-problems that can be solved individually. Makes large problems easier to understand and solve. Each sub-problem can be solved separately and then combined.
+
+### Q: What is algorithmic thinking?
+**A:** Creating a logical sequence of steps to solve a problem. Involves identifying the inputs, processes, and outputs needed. The solution must be clear, unambiguous, and executable.
+
+### Q: What is pattern recognition?
+**A:** Identifying similarities, trends, or regularities in data or problems. Helps in reusing solutions from similar problems. Allows for generalization and use of existing algorithms/solutions.
+
+---
+
+## 💻 Category 2: Programming Fundamentals
+
+### Q: What is a subroutine?
+**A:** A named block of code that performs a specific task and can be called from other parts of the program. Two types: procedures (perform actions) and functions (return values). Benefits: code reuse, modularity, easier testing and maintenance.
+
+### Q: What is the difference between a procedure and a function?
+**A:**
+- **Procedure:** executes code but doesn't return a value. Used for performing actions (e.g., print, save file).
+- **Function:** executes code AND returns a value. Used for calculations or data transformations (e.g., calculate total, get user input).
+
+### Q: What are parameters?
+**A:** Variables listed in the subroutine definition that receive values when the subroutine is called. Allow data to be passed into subroutines. Make subroutines more flexible and reusable.
+
+### Q: What is the difference between local and global variables?
+**A:**
+- **Local variables:** declared inside a subroutine, only accessible within that subroutine, destroyed when subroutine ends, prevent naming conflicts.
+- **Global variables:** declared outside subroutines, accessible throughout the program, persist for program lifetime, can cause unexpected side effects.
+
+### Q: What is parameter passing by value?
+**A:** A copy of the argument's value is passed to the parameter. Changes to the parameter inside the subroutine don't affect the original variable. Safer but uses more memory for large data. Default in many languages.
+
+### Q: What is parameter passing by reference?
+**A:** The memory address of the argument is passed to the parameter. Changes to the parameter inside the subroutine DO affect the original variable. More memory efficient for large data but can cause unintended side effects.
+
+---
+
+## 🔄 Category 3: Recursion
+
+### Q: What is recursion?
+**A:** A programming technique where a subroutine calls itself to solve a problem by breaking it into smaller instances of the same problem. Must have: base case(s) to stop recursion, recursive case(s) that call the function. Alternative to iteration.
+
+### Q: What is a base case in recursion?
+**A:** The condition that stops the recursion. Returns a value without making another recursive call. Without a base case, recursion continues infinitely causing stack overflow. Example: in factorial, base case is n = 0 or n = 1.
+
+### Q: Give an example of a recursive algorithm
+**A:** **Factorial:**
+```
+function factorial(n)
+  if n <= 1 then
+    return 1  // base case
+  else
+    return n * factorial(n-1)  // recursive case
+  end if
+end function
+
+factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
+```
+
+### Q: What are the advantages of recursion?
+**A:**
+1. More elegant and readable for certain problems (trees, fractals)
+2. Natural fit for recursive data structures
+3. Simpler code for complex problems
+4. Easier to prove correctness mathematically
+5. Good for divide-and-conquer algorithms
+
+### Q: What are the disadvantages of recursion?
+**A:**
+1. Uses more memory (stack space for each call)
+2. Slower than iteration (overhead of function calls)
+3. Risk of stack overflow with deep recursion
+4. Can be harder to debug
+5. Not all problems suit recursive solutions
+
+### Q: What is stack overflow?
+**A:** An error that occurs when the call stack runs out of memory, typically from excessive recursion without reaching base case or too deep recursion. Crashes the program. Can be avoided with proper base cases and tail recursion optimization.
+
+---
+
+## 📦 Category 4: Abstract Data Types
+
+### Q: What is an abstract data type (ADT)?
+**A:** A theoretical concept that defines a data type by its behavior (operations) rather than its implementation. Specifies what operations can be performed but not how they are implemented. Examples: Stack, Queue, List, Dictionary. Implementation details are hidden.
+
+### Q: What is a stack ADT?
+**A:** A Last-In-First-Out (LIFO) abstract data type.
+
+**Operations:** push(item), pop(), peek(), isEmpty()
+
+**Applications:** function calls, undo operations, expression evaluation, backtracking algorithms.
+
+### Q: What is a queue ADT?
+**A:** A First-In-First-Out (FIFO) abstract data type.
+
+**Operations:** enqueue(item), dequeue(), peek(), isEmpty()
+
+**Applications:** task scheduling, print queues, breadth-first search, buffer management.
+
+### Q: What is a priority queue?
+**A:** A queue where each element has a priority value. Elements with higher priority are dequeued before lower priority elements, regardless of insertion order. Applications: task scheduling, Dijkstra's algorithm, event simulation. Often implemented using heaps.
+
+### Q: What is a dictionary/map ADT?
+**A:** An abstract data type storing key-value pairs. Each key is unique and maps to one value.
+
+**Operations:** insert(key, value), get(key), delete(key), containsKey(key)
+
+Also called associative array or hash map. Fast lookups by key.
+
+---
+
+## 🌳 Category 5: Binary Trees
+
+### Q: What is a binary tree?
+**A:** A tree data structure where each node has at most two children: left child and right child. Each node contains data, pointer to left child, pointer to right child. Root is the top node. Leaf nodes have no children.
+
+### Q: What is a binary search tree (BST)?
+**A:** A binary tree with ordering property: for each node, all values in left subtree are less than node's value, all values in right subtree are greater. Enables efficient searching, insertion, deletion. Average case O(log n) for balanced trees.
+
+### Q: What are the three tree traversal methods?
+**A:**
+1. **In-order (Left, Root, Right):** visits nodes in ascending order for BST
+2. **Pre-order (Root, Left, Right):** useful for copying tree structure
+3. **Post-order (Left, Right, Root):** useful for deleting tree or evaluating expressions
+
+### Q: Describe in-order traversal algorithm
+**A:**
+```
+function inOrder(node)
+  if node is not null then
+    inOrder(node.left)     // traverse left
+    visit(node)            // process node
+    inOrder(node.right)    // traverse right
+  end if
+end function
+```
+
+For BST: produces values in ascending order
+
+### Q: How do you insert into a binary search tree?
+**A:** Start at root. Compare value with current node:
+- If less: go left (if left is null, insert here)
+- If greater: go right (if right is null, insert here)
+- If equal: handle duplicates (reject or increment counter)
+
+Time complexity: O(log n) average, O(n) worst case (unbalanced)
+
+---
+
+## 🕸️ Category 6: Graphs
+
+### Q: What is a graph?
+**A:** A data structure consisting of vertices (nodes) connected by edges. Can represent networks, relationships, maps. Components: vertices/nodes, edges/arcs. Can be directed (one-way edges) or undirected (two-way edges).
+
+### Q: What is an adjacency matrix?
+**A:** A 2D array representation of a graph where matrix[i][j] = 1 if edge exists from vertex i to j, 0 otherwise. For weighted graphs, stores weight instead of 1. Space: O(V²). Good for dense graphs. Fast edge lookup O(1).
+
+### Q: What is an adjacency list?
+**A:** A graph representation where each vertex stores a list of its adjacent vertices. Space: O(V + E). Good for sparse graphs. Slower edge lookup than matrix but more space-efficient. Easier to iterate over neighbors.
+
+### Q: What is depth-first search (DFS)?
+**A:** A graph traversal algorithm that explores as far as possible along each branch before backtracking. Uses a stack (or recursion).
+
+**Applications:** detecting cycles, topological sorting, maze solving, finding connected components.
+
+### Q: What is breadth-first search (BFS)?
+**A:** A graph traversal algorithm that explores all neighbors at current depth before moving to next depth level. Uses a queue.
+
+**Applications:** shortest path in unweighted graphs, level-order traversal, finding connected components.
+
+### Q: What are the differences between DFS and BFS?
+**A:**
+- **DFS:** Uses stack, goes deep, less memory for sparse graphs, doesn't find shortest path.
+- **BFS:** Uses queue, goes wide, finds shortest path in unweighted graphs, more memory usage.
+- **Both:** O(V + E) time complexity, visit all vertices.
+
+---
+
+## 🎯 Category 7: Object-Oriented Programming
+
+### Q: What is object-oriented programming (OOP)?
+**A:** A programming paradigm based on objects that contain data (attributes) and code (methods). Key principles: encapsulation, inheritance, polymorphism. Benefits: modularity, reusability, easier maintenance, models real-world entities.
+
+### Q: What is a class?
+**A:** A blueprint or template for creating objects. Defines attributes (data) and methods (behavior) that objects of that class will have. Example: Car class with attributes (color, model) and methods (drive, brake). Classes are abstract, objects are concrete.
+
+### Q: What is encapsulation?
+**A:** Bundling data and methods that operate on that data within a class, hiding internal details. Uses access modifiers (private, public, protected). Benefits: data protection, implementation hiding, easier to change internal code without affecting external code.
+
+### Q: What are access modifiers?
+**A:** Keywords controlling visibility of class members:
+- **Public:** accessible from anywhere
+- **Private:** only accessible within the class
+- **Protected:** accessible within class and subclasses
+
+Good practice: make attributes private, provide public methods (getters/setters)
+
+### Q: What is inheritance?
+**A:** Mechanism where a new class (subclass/child) inherits attributes and methods from an existing class (superclass/parent). Enables code reuse and hierarchical classification. Subclass can add new features or override existing ones. Example: Dog inherits from Animal.
+
+### Q: What is polymorphism?
+**A:** The ability of objects of different classes to respond to the same method call in different ways. Two types: overriding (runtime) and overloading (compile-time). Enables flexible code. Example: different animals respond differently to speak() method.
+
+### Q: What is method overriding?
+**A:** When a subclass provides a specific implementation of a method already defined in its superclass. Same method name, parameters, and return type. Subclass version is called for subclass objects. Example: Dog.speak() overrides Animal.speak().
+
+### Q: What is a constructor?
+**A:** A special method called when an object is created. Initializes object attributes. Same name as class, no return type. Can be overloaded. If none defined, default constructor is provided. Example: Car(color, model).
+
+---
+
+## ⚡ Category 8: Algorithm Efficiency & Big O
+
+### Q: What is Big O notation?
+**A:** Mathematical notation describing algorithm efficiency by expressing how runtime or space requirements grow with input size n. Focuses on worst-case scenario and growth rate, ignoring constants. Examples: O(1), O(log n), O(n), O(n²).
+
+### Q: What is O(1) - Constant time?
+**A:** Algorithm takes same time regardless of input size.
+
+**Examples:** array access by index, hash table lookup (average), push/pop on stack.
+
+Most efficient. Example: return array[5] - always one operation.
+
+### Q: What is O(log n) - Logarithmic time?
+**A:** Algorithm runtime increases logarithmically with input size. Doubles input only adds one more operation. Very efficient for large datasets.
+
+**Examples:** binary search, balanced BST operations.
+
+Grows very slowly.
+
+### Q: What is O(n) - Linear time?
+**A:** Algorithm runtime increases proportionally with input size. Double input, double time.
+
+**Examples:** linear search, traversing array/list, finding min/max.
+
+Acceptable for most purposes.
+
+### Q: What is O(n log n) - Linearithmic time?
+**A:** Algorithm runtime is n multiplied by log n. Common in efficient sorting algorithms.
+
+**Examples:** merge sort, quick sort (average), heap sort.
+
+Good efficiency for sorting. Much better than O(n²).
+
+### Q: What is O(n²) - Quadratic time?
+**A:** Algorithm runtime is proportional to square of input size. Often involves nested loops.
+
+**Examples:** bubble sort, insertion sort, selection sort.
+
+Inefficient for large datasets. Double input, quadruple time.
+
+### Q: Compare common Big O complexities
+**A:** From best to worst:
+```
+O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)
+```
+
+**For n=100:**
+- O(1): 1 operation
+- O(log n): ~7 operations
+- O(n): 100 operations
+- O(n²): 10,000 operations
+- O(2ⁿ): ~10³⁰ operations
+
+---
+
+## 🔄 Category 9: Sorting Algorithms
+
+### Q: What is bubble sort?
+**A:** Simple sorting algorithm that repeatedly steps through list, compares adjacent elements and swaps if in wrong order. Continues until no swaps needed. Called 'bubble' because larger values bubble to the end.
+
+**Time:** O(n²), **Space:** O(1). Stable but inefficient.
+
+### Q: What is insertion sort?
+**A:** Builds sorted array one element at a time by inserting each element into its correct position. Like sorting playing cards in your hand.
+
+**Time:** O(n²) worst, O(n) best (already sorted)
+**Space:** O(1)
+
+Efficient for small or nearly-sorted data. Stable.
+
+### Q: What is merge sort?
+**A:** Divide-and-conquer algorithm that divides array in half recursively, sorts each half, then merges sorted halves. Always O(n log n) time regardless of input.
+
+**Space:** O(n) for temporary arrays.
+
+Stable. Predictable performance. Not in-place.
+
+### Q: What is quick sort?
+**A:** Divide-and-conquer algorithm using a pivot to partition array. Elements less than pivot go left, greater go right. Recursively sort partitions.
+
+**Average:** O(n log n)
+**Worst:** O(n²)
+**Space:** O(log n)
+
+In-place. Unstable. Very fast in practice.
+
+### Q: Compare sorting algorithm complexities
+**A:**
+- **Bubble Sort:** O(n²) time, O(1) space, stable
+- **Insertion Sort:** O(n²) time, O(1) space, stable
+- **Merge Sort:** O(n log n) time, O(n) space, stable
+- **Quick Sort:** O(n log n) avg, O(n²) worst, O(log n) space, unstable
+
+Best for large data: Merge or Quick Sort
+
+---
+
+## 🔍 Category 10: Searching Algorithms
+
+### Q: What is linear search?
+**A:** Simple search algorithm checking each element sequentially until target found or end reached. Works on unsorted data.
+
+**Time:** O(n), **Space:** O(1)
+
+Best case: O(1) if first element. Worst: O(n) if last or not present.
+
+### Q: What is binary search?
+**A:** Efficient search for sorted arrays. Repeatedly divides search space in half by comparing target with middle element.
+
+**Time:** O(log n), **Space:** O(1) iterative or O(log n) recursive
+
+Requires sorted data. Much faster than linear for large datasets.
+
+### Q: Compare linear and binary search
+**A:**
+**Linear Search:**
+- ✅ Works on unsorted data
+- ✅ Simple to implement
+- ✅ Works on any structure
+- ❌ O(n) time - slow for large data
+
+**Binary Search:**
+- ✅ O(log n) time - very fast
+- ✅ Efficient for large datasets
+- ❌ Requires sorted data
+- ❌ Requires random access
+
+---
+
+## 📁 Category 11: File Handling
+
+### Q: What are the file access modes?
+**A:**
+- **Read mode ('r'):** open existing file for reading, error if doesn't exist
+- **Write mode ('w'):** create new file or overwrite existing
+- **Append mode ('a'):** add to end of existing file, create if doesn't exist
+- **Read/Write mode ('r+', 'w+', 'a+'):** combination modes
+
+### Q: What is a text file?
+**A:** File storing data as human-readable characters using encoding like ASCII or UTF-8. Can be opened in text editor. Examples: .txt, .csv, .json. Lines typically end with newline character. Easy to read but less efficient than binary.
+
+### Q: What is a CSV file?
+**A:** Comma-Separated Values file storing tabular data. Each line is a record, commas separate fields. First line often contains headers. Human-readable, widely supported.
+
+**Example:**
+```
+name,age,grade
+Alice,16,A
+Bob,17,B
+```
+
+### Q: What is JSON?
+**A:** JavaScript Object Notation - text format for storing and exchanging data. Uses key-value pairs and arrays. Human-readable, language-independent, supports nested structures. Common for web APIs and config files.
+
+**Example:** `{"name": "Alice", "age": 16}`
+
+---
+
+## ⚠️ Category 12: Exception Handling
+
+### Q: What is exception handling?
+**A:** Mechanism for handling runtime errors gracefully without crashing the program. Uses try-catch-finally blocks. Separates error-handling code from normal code. Makes programs more robust and user-friendly.
+
+### Q: What is a try-except block?
+**A:**
+- **try block:** contains code that might raise an exception
+- **except block:** handles the exception if it occurs
+
+Program continues after except block. Can have multiple except blocks for different exception types. Example: try reading file, except handle FileNotFoundError.
+
+### Q: What are common exception types?
+**A:**
+- **ValueError:** invalid value (e.g., int('abc'))
+- **TypeError:** wrong type (e.g., 'a' + 5)
+- **ZeroDivisionError:** division by zero
+- **IndexError:** index out of range
+- **KeyError:** key not in dictionary
+- **FileNotFoundError:** file doesn't exist
+
+---
+
+## 🗄️ Category 13: SQL & Databases
+
+### Q: What is SQL?
+**A:** Structured Query Language - standard language for managing relational databases. Used to: create/modify database structure, insert/update/delete data, query data. Not case-sensitive. Declarative (say what you want, not how to get it).
+
+### Q: What is a primary key?
+**A:** A field (or combination of fields) that uniquely identifies each record in a table. Must be: unique, not null, unchanging. Only one primary key per table. Often an ID number. Ensures entity integrity.
+
+### Q: What is a foreign key?
+**A:** A field in one table that references the primary key of another table. Creates relationship between tables. Can be null. Can have multiple foreign keys per table. Ensures referential integrity. Example: StudentID in Enrollment table references Students table.
+
+### Q: What is the SELECT statement?
+**A:** Retrieves data from database.
+
+**Syntax:** `SELECT column1, column2 FROM table WHERE condition ORDER BY column`
+
+- `SELECT *` selects all columns
+- `WHERE` filters rows
+- `ORDER BY` sorts results (ASC/DESC)
+
+**Example:** `SELECT name, age FROM students WHERE age > 16`
+
+### Q: What is a JOIN?
+**A:** Combines rows from two or more tables based on related column.
+
+- **INNER JOIN:** returns matching records from both tables
+- **LEFT JOIN:** all from left table, matching from right
+- **RIGHT JOIN:** all from right table, matching from left
+
+**Example:** `SELECT * FROM students INNER JOIN enrollments ON students.id = enrollments.student_id`
+
+### Q: What are SQL aggregate functions?
+**A:** Functions that perform calculations on multiple rows:
+- **COUNT():** number of rows
+- **SUM():** total of values
+- **AVG():** average of values
+- **MAX():** largest value
+- **MIN():** smallest value
+
+**Example:** `SELECT COUNT(*) FROM students WHERE grade = 'A'`
+
+---
+
+## 🗂️ Category 14: Dictionaries & Hash Tables
+
+### Q: What is a hash table?
+**A:** Data structure implementing associative array (dictionary) using hash function to compute index for storing values. Maps keys to values. Average O(1) for insert, delete, search. Also called hash map. Handles collisions using chaining or open addressing.
+
+### Q: What is a hash function?
+**A:** Function that converts input (key) into integer (hash code) used as array index. Should be: fast to compute, deterministic (same input → same output), uniform distribution. Good hash function minimizes collisions.
+
+### Q: What is a collision in hash tables?
+**A:** When two different keys hash to the same index. Inevitable with finite array size. Handling methods: chaining (linked lists at each index), open addressing (find next available slot). Affects performance - too many collisions degrade to O(n).
+
+---
+
+## 🎨 Category 15: Algorithm Design Techniques
+
+### Q: What is divide and conquer?
+**A:** Algorithm design paradigm that breaks problem into smaller subproblems, solves them recursively, then combines solutions. Steps: divide, conquer, combine.
+
+**Examples:** merge sort, quick sort, binary search.
+
+Often uses recursion. Efficient but may have overhead.
+
+### Q: What is dynamic programming?
+**A:** Optimization technique that solves complex problems by breaking them into overlapping subproblems, solving each once, and storing results (memoization). Avoids redundant computation.
+
+**Examples:** Fibonacci with memoization, shortest path, knapsack problem.
+
+Bottom-up or top-down approach.
+
+### Q: What is a greedy algorithm?
+**A:** Algorithm that makes locally optimal choice at each step hoping to find global optimum. Doesn't reconsider choices. Fast but doesn't always give optimal solution.
+
+**Examples:** Dijkstra's algorithm, Huffman coding, activity selection.
+
+Works when greedy choice property holds.
+
+### Q: What is backtracking?
+**A:** Algorithm technique for finding solutions by trying possibilities and abandoning (backtracking) when they fail. Systematic trial and error. Uses recursion.
+
+**Examples:** N-Queens problem, Sudoku solver, maze solving.
+
+Can be slow but guarantees finding solution if one exists.
+
+---
+
+## 📝 Study Tips for Unit 2
+
+1. **Practice writing code** for each algorithm - don't just memorize
+2. **Trace through algorithms** with example data to understand how they work
+3. **Draw diagrams** for data structures (trees, graphs, stacks, queues)
+4. **Understand when to use** each data structure and algorithm
+5. **Practice Big O analysis** by counting operations in code
+6. **Work through past paper** programming questions
+7. **Implement sorting and searching** algorithms from scratch
+8. **Understand recursion** by drawing call stacks
+9. **Practice SQL queries** with sample databases
+10. **Learn to recognize** which algorithm design technique fits each problem
+11. **Understand trade-offs:** time vs space, simplicity vs efficiency
+12. **Review OOP concepts** with real-world examples
+
+---
+
+## Quick Reference Guide - Unit 2
+
+### Time Complexities:
+- **O(1)** - Array access, hash table lookup
+- **O(log n)** - Binary search, balanced BST
+- **O(n)** - Linear search, array traversal
+- **O(n log n)** - Merge sort, quick sort (avg)
+- **O(n²)** - Bubble sort, nested loops
+
+### Data Structures:
+- **Stack** - LIFO (push, pop, peek)
+- **Queue** - FIFO (enqueue, dequeue, peek)
+- **BST** - Ordered tree (O(log n) average)
+- **Hash Table** - Key-value pairs (O(1) average)
+- **Graph** - Vertices + edges (DFS, BFS)
+
+### Tree Traversals:
+- **In-order** - Left, Root, Right (ascending in BST)
+- **Pre-order** - Root, Left, Right (copy structure)
+- **Post-order** - Left, Right, Root (delete tree)
+
+### OOP Principles:
+- **Encapsulation** - Hide implementation details
+- **Inheritance** - Reuse code from parent class
+- **Polymorphism** - Same method, different behaviors
+
+### SQL Basics:
+- **SELECT** - Retrieve data
+- **INSERT** - Add records
+- **UPDATE** - Modify records
+- **DELETE** - Remove records
+- **JOIN** - Combine tables
+
+---
+
+**Keep practicing and good luck with your A Level exams!** 🎓

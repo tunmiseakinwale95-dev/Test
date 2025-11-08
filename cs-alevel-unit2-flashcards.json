@@ -1,0 +1,640 @@
+{
+  "title": "A Level Computer Science - Unit 2: Algorithms and Programming",
+  "description": "Comprehensive flashcards covering all topics in A Level Computer Science Unit 2",
+  "categories": [
+    {
+      "name": "1. Computational Thinking",
+      "flashcards": [
+        {
+          "question": "What is abstraction in computational thinking?",
+          "answer": "The process of removing unnecessary detail and complexity from a problem to focus on the essential features. Involves hiding implementation details and showing only functionality. Examples: using functions without knowing internal workings, database views."
+        },
+        {
+          "question": "What is decomposition?",
+          "answer": "Breaking down a complex problem into smaller, more manageable sub-problems that can be solved individually. Makes large problems easier to understand and solve. Each sub-problem can be solved separately and then combined."
+        },
+        {
+          "question": "What is algorithmic thinking?",
+          "answer": "Creating a logical sequence of steps to solve a problem. Involves identifying the inputs, processes, and outputs needed. The solution must be clear, unambiguous, and executable."
+        },
+        {
+          "question": "What is pattern recognition?",
+          "answer": "Identifying similarities, trends, or regularities in data or problems. Helps in reusing solutions from similar problems. Allows for generalization and use of existing algorithms/solutions."
+        },
+        {
+          "question": "What is problem recognition?",
+          "answer": "The ability to identify that a problem exists and understand its nature. Involves defining the problem clearly, identifying constraints, and determining what a successful solution looks like."
+        },
+        {
+          "question": "What is problem representation?",
+          "answer": "Expressing a problem in a form suitable for computational solution. May use diagrams, tables, graphs, mathematical notation, or data structures. Good representation makes the problem easier to solve."
+        }
+      ]
+    },
+    {
+      "name": "2. Programming Fundamentals",
+      "flashcards": [
+        {
+          "question": "What is a subroutine?",
+          "answer": "A named block of code that performs a specific task and can be called from other parts of the program. Two types: procedures (perform actions) and functions (return values). Benefits: code reuse, modularity, easier testing and maintenance."
+        },
+        {
+          "question": "What is the difference between a procedure and a function?",
+          "answer": "Procedure: executes code but doesn't return a value. Used for performing actions (e.g., print, save file).\nFunction: executes code AND returns a value. Used for calculations or data transformations (e.g., calculate total, get user input)."
+        },
+        {
+          "question": "What are parameters?",
+          "answer": "Variables listed in the subroutine definition that receive values when the subroutine is called. Allow data to be passed into subroutines. Make subroutines more flexible and reusable."
+        },
+        {
+          "question": "What are arguments?",
+          "answer": "The actual values passed to a subroutine when it is called. These values are assigned to the parameters. Example: in calculate(5, 10), the arguments are 5 and 10."
+        },
+        {
+          "question": "What is the difference between local and global variables?",
+          "answer": "Local variables: declared inside a subroutine, only accessible within that subroutine, destroyed when subroutine ends, prevent naming conflicts.\nGlobal variables: declared outside subroutines, accessible throughout the program, persist for program lifetime, can cause unexpected side effects."
+        },
+        {
+          "question": "What is variable scope?",
+          "answer": "The region of code where a variable can be accessed. Local scope: variable only accessible within its defining block. Global scope: variable accessible throughout the entire program. Good practice: minimize global variables to avoid conflicts."
+        },
+        {
+          "question": "What is parameter passing by value?",
+          "answer": "A copy of the argument's value is passed to the parameter. Changes to the parameter inside the subroutine don't affect the original variable. Safer but uses more memory for large data. Default in many languages."
+        },
+        {
+          "question": "What is parameter passing by reference?",
+          "answer": "The memory address of the argument is passed to the parameter. Changes to the parameter inside the subroutine DO affect the original variable. More memory efficient for large data but can cause unintended side effects."
+        },
+        {
+          "question": "What is a return statement?",
+          "answer": "A statement that exits a function and optionally sends a value back to the caller. Only used in functions (not procedures). Can return any data type. Execution of function stops when return is reached."
+        },
+        {
+          "question": "What is modular programming?",
+          "answer": "A design technique that separates program functionality into independent, interchangeable modules/subroutines. Benefits: easier to understand, test, debug, and maintain; enables code reuse; allows team collaboration."
+        }
+      ]
+    },
+    {
+      "name": "3. Recursion",
+      "flashcards": [
+        {
+          "question": "What is recursion?",
+          "answer": "A programming technique where a subroutine calls itself to solve a problem by breaking it into smaller instances of the same problem. Must have: base case(s) to stop recursion, recursive case(s) that call the function. Alternative to iteration."
+        },
+        {
+          "question": "What is a base case in recursion?",
+          "answer": "The condition that stops the recursion. Returns a value without making another recursive call. Without a base case, recursion continues infinitely causing stack overflow. Example: in factorial, base case is n = 0 or n = 1."
+        },
+        {
+          "question": "What is a recursive case?",
+          "answer": "The part of a recursive function that makes a recursive call with a modified parameter, moving towards the base case. Example: in factorial(n), recursive case is n * factorial(n-1)."
+        },
+        {
+          "question": "Give an example of a recursive algorithm",
+          "answer": "Factorial:\nfunction factorial(n)\n  if n <= 1 then\n    return 1  // base case\n  else\n    return n * factorial(n-1)  // recursive case\n  end if\nend function\n\nfactorial(5) = 5 * 4 * 3 * 2 * 1 = 120"
+        },
+        {
+          "question": "What are the advantages of recursion?",
+          "answer": "1. More elegant and readable for certain problems (trees, fractals)\n2. Natural fit for recursive data structures\n3. Simpler code for complex problems\n4. Easier to prove correctness mathematically\n5. Good for divide-and-conquer algorithms"
+        },
+        {
+          "question": "What are the disadvantages of recursion?",
+          "answer": "1. Uses more memory (stack space for each call)\n2. Slower than iteration (overhead of function calls)\n3. Risk of stack overflow with deep recursion\n4. Can be harder to debug\n5. Not all problems suit recursive solutions"
+        },
+        {
+          "question": "What is the call stack?",
+          "answer": "A data structure that stores information about active subroutines. Each function call creates a new stack frame containing local variables, parameters, and return address. Frames are popped when functions return. Recursion creates multiple frames."
+        },
+        {
+          "question": "What is stack overflow?",
+          "answer": "An error that occurs when the call stack runs out of memory, typically from excessive recursion without reaching base case or too deep recursion. Crashes the program. Can be avoided with proper base cases and tail recursion optimization."
+        },
+        {
+          "question": "When should you use recursion vs iteration?",
+          "answer": "Use recursion for: tree/graph traversal, divide-and-conquer, naturally recursive problems (Fibonacci, factorial), when code clarity is priority.\nUse iteration for: simple loops, performance-critical code, large datasets, when stack space is limited."
+        },
+        {
+          "question": "Give an example of recursive binary search",
+          "answer": "function binarySearch(array, target, low, high)\n  if low > high then\n    return -1  // base case: not found\n  end if\n  mid = (low + high) / 2\n  if array[mid] = target then\n    return mid  // base case: found\n  else if target < array[mid] then\n    return binarySearch(array, target, low, mid-1)\n  else\n    return binarySearch(array, target, mid+1, high)\n  end if\nend function"
+        }
+      ]
+    },
+    {
+      "name": "4. Abstract Data Types",
+      "flashcards": [
+        {
+          "question": "What is an abstract data type (ADT)?",
+          "answer": "A theoretical concept that defines a data type by its behavior (operations) rather than its implementation. Specifies what operations can be performed but not how they are implemented. Examples: Stack, Queue, List, Dictionary. Implementation details are hidden."
+        },
+        {
+          "question": "What is a stack ADT?",
+          "answer": "A Last-In-First-Out (LIFO) abstract data type. Operations: push(item), pop(), peek(), isEmpty(). Applications: function calls, undo operations, expression evaluation, backtracking algorithms."
+        },
+        {
+          "question": "How can you implement a stack?",
+          "answer": "1. Using an array: fast access, fixed size, need to track top pointer\n2. Using a linked list: dynamic size, slightly slower, no size limit\nBoth implementations should support push, pop, peek, isEmpty operations."
+        },
+        {
+          "question": "What is a queue ADT?",
+          "answer": "A First-In-First-Out (FIFO) abstract data type. Operations: enqueue(item), dequeue(), peek(), isEmpty(). Applications: task scheduling, print queues, breadth-first search, buffer management."
+        },
+        {
+          "question": "How can you implement a queue?",
+          "answer": "1. Linear queue (array): simple but wastes space as front moves\n2. Circular queue (array): efficient use of space, wraps around\n3. Linked list: dynamic size, no wraparound issues, slight overhead\nAll should support enqueue, dequeue, peek, isEmpty."
+        },
+        {
+          "question": "What is a priority queue?",
+          "answer": "A queue where each element has a priority value. Elements with higher priority are dequeued before lower priority elements, regardless of insertion order. Applications: task scheduling, Dijkstra's algorithm, event simulation. Often implemented using heaps."
+        },
+        {
+          "question": "What is a dictionary/map ADT?",
+          "answer": "An abstract data type storing key-value pairs. Each key is unique and maps to one value. Operations: insert(key, value), get(key), delete(key), containsKey(key). Also called associative array or hash map. Fast lookups by key."
+        },
+        {
+          "question": "What is a set ADT?",
+          "answer": "An unordered collection of unique elements (no duplicates). Operations: add(element), remove(element), contains(element), union, intersection, difference. Applications: removing duplicates, membership testing, mathematical set operations."
+        },
+        {
+          "question": "What is a graph ADT?",
+          "answer": "A data structure consisting of vertices (nodes) and edges connecting them. Can be directed or undirected, weighted or unweighted. Operations: addVertex, addEdge, removeVertex, removeEdge, getNeighbors. Applications: networks, maps, social connections."
+        },
+        {
+          "question": "What is a tree ADT?",
+          "answer": "A hierarchical data structure with a root node and child nodes forming a parent-child relationship. No cycles. Types: binary tree, binary search tree, AVL tree. Applications: file systems, databases, expression parsing, decision making."
+        }
+      ]
+    },
+    {
+      "name": "5. Binary Trees",
+      "flashcards": [
+        {
+          "question": "What is a binary tree?",
+          "answer": "A tree data structure where each node has at most two children: left child and right child. Each node contains data, pointer to left child, pointer to right child. Root is the top node. Leaf nodes have no children."
+        },
+        {
+          "question": "What is a binary search tree (BST)?",
+          "answer": "A binary tree with ordering property: for each node, all values in left subtree are less than node's value, all values in right subtree are greater. Enables efficient searching, insertion, deletion. Average case O(log n) for balanced trees."
+        },
+        {
+          "question": "What are the three tree traversal methods?",
+          "answer": "1. In-order (Left, Root, Right): visits nodes in ascending order for BST\n2. Pre-order (Root, Left, Right): useful for copying tree structure\n3. Post-order (Left, Right, Root): useful for deleting tree or evaluating expressions"
+        },
+        {
+          "question": "Describe in-order traversal algorithm",
+          "answer": "function inOrder(node)\n  if node is not null then\n    inOrder(node.left)     // traverse left\n    visit(node)             // process node\n    inOrder(node.right)     // traverse right\n  end if\nend function\n\nFor BST: produces values in ascending order"
+        },
+        {
+          "question": "Describe pre-order traversal algorithm",
+          "answer": "function preOrder(node)\n  if node is not null then\n    visit(node)             // process node\n    preOrder(node.left)     // traverse left\n    preOrder(node.right)    // traverse right\n  end if\nend function\n\nUseful for: copying tree, prefix expressions"
+        },
+        {
+          "question": "Describe post-order traversal algorithm",
+          "answer": "function postOrder(node)\n  if node is not null then\n    postOrder(node.left)    // traverse left\n    postOrder(node.right)   // traverse right\n    visit(node)             // process node\n  end if\nend function\n\nUseful for: deleting tree, postfix expressions, calculating tree properties"
+        },
+        {
+          "question": "How do you insert into a binary search tree?",
+          "answer": "Start at root. Compare value with current node:\n- If less: go left (if left is null, insert here)\n- If greater: go right (if right is null, insert here)\n- If equal: handle duplicates (reject or increment counter)\nTime complexity: O(log n) average, O(n) worst case (unbalanced)"
+        },
+        {
+          "question": "How do you search in a binary search tree?",
+          "answer": "Start at root. Compare target with current node:\n- If equal: found!\n- If less: search left subtree\n- If greater: search right subtree\n- If null: not found\nTime complexity: O(log n) average, O(n) worst case"
+        },
+        {
+          "question": "What is tree depth/height?",
+          "answer": "Depth of a node: number of edges from root to that node (root has depth 0).\nHeight of tree: maximum depth of any node (longest path from root to leaf).\nHeight of empty tree is -1, single node tree has height 0."
+        },
+        {
+          "question": "What is a balanced binary tree?",
+          "answer": "A tree where the height difference between left and right subtrees of any node is at most 1. Ensures O(log n) performance for operations. Examples: AVL trees, Red-Black trees. Unbalanced trees can degrade to O(n) performance."
+        }
+      ]
+    },
+    {
+      "name": "6. Graphs",
+      "flashcards": [
+        {
+          "question": "What is a graph?",
+          "answer": "A data structure consisting of vertices (nodes) connected by edges. Can represent networks, relationships, maps. Components: vertices/nodes, edges/arcs. Can be directed (one-way edges) or undirected (two-way edges)."
+        },
+        {
+          "question": "What is a weighted graph?",
+          "answer": "A graph where each edge has an associated numerical value (weight) representing cost, distance, time, etc. Used in shortest path algorithms (Dijkstra's). Example: road network with distances as weights."
+        },
+        {
+          "question": "What is an adjacency matrix?",
+          "answer": "A 2D array representation of a graph where matrix[i][j] = 1 if edge exists from vertex i to j, 0 otherwise. For weighted graphs, stores weight instead of 1. Space: O(V²). Good for dense graphs. Fast edge lookup O(1)."
+        },
+        {
+          "question": "What is an adjacency list?",
+          "answer": "A graph representation where each vertex stores a list of its adjacent vertices. Space: O(V + E). Good for sparse graphs. Slower edge lookup than matrix but more space-efficient. Easier to iterate over neighbors."
+        },
+        {
+          "question": "What is depth-first search (DFS)?",
+          "answer": "A graph traversal algorithm that explores as far as possible along each branch before backtracking. Uses a stack (or recursion). Applications: detecting cycles, topological sorting, maze solving, finding connected components."
+        },
+        {
+          "question": "Describe the DFS algorithm",
+          "answer": "function DFS(vertex)\n  mark vertex as visited\n  for each neighbor of vertex do\n    if neighbor not visited then\n      DFS(neighbor)\n    end if\n  end for\nend function\n\nIterative version uses explicit stack. Time: O(V + E)"
+        },
+        {
+          "question": "What is breadth-first search (BFS)?",
+          "answer": "A graph traversal algorithm that explores all neighbors at current depth before moving to next depth level. Uses a queue. Applications: shortest path in unweighted graphs, level-order traversal, finding connected components."
+        },
+        {
+          "question": "Describe the BFS algorithm",
+          "answer": "function BFS(start)\n  create queue Q\n  mark start as visited\n  enqueue start to Q\n  while Q not empty do\n    vertex = dequeue from Q\n    for each neighbor of vertex do\n      if neighbor not visited then\n        mark neighbor as visited\n        enqueue neighbor to Q\n      end if\n    end for\n  end while\nend function\n\nTime: O(V + E)"
+        },
+        {
+          "question": "What are the differences between DFS and BFS?",
+          "answer": "DFS: Uses stack, goes deep, less memory for sparse graphs, doesn't find shortest path.\nBFS: Uses queue, goes wide, finds shortest path in unweighted graphs, more memory usage.\nBoth: O(V + E) time complexity, visit all vertices."
+        },
+        {
+          "question": "What is Dijkstra's algorithm?",
+          "answer": "An algorithm for finding the shortest path from a start vertex to all other vertices in a weighted graph with non-negative weights. Uses a priority queue. Greedy algorithm. Time: O((V + E) log V) with binary heap. Applications: GPS, network routing."
+        }
+      ]
+    },
+    {
+      "name": "7. Object-Oriented Programming",
+      "flashcards": [
+        {
+          "question": "What is object-oriented programming (OOP)?",
+          "answer": "A programming paradigm based on objects that contain data (attributes) and code (methods). Key principles: encapsulation, inheritance, polymorphism. Benefits: modularity, reusability, easier maintenance, models real-world entities."
+        },
+        {
+          "question": "What is a class?",
+          "answer": "A blueprint or template for creating objects. Defines attributes (data) and methods (behavior) that objects of that class will have. Example: Car class with attributes (color, model) and methods (drive, brake). Classes are abstract, objects are concrete."
+        },
+        {
+          "question": "What is an object?",
+          "answer": "An instance of a class. Has its own set of attribute values but shares methods defined in the class. Example: myCar is an object of class Car. Created using constructor. Also called an instance."
+        },
+        {
+          "question": "What is encapsulation?",
+          "answer": "Bundling data and methods that operate on that data within a class, hiding internal details. Uses access modifiers (private, public, protected). Benefits: data protection, implementation hiding, easier to change internal code without affecting external code."
+        },
+        {
+          "question": "What are access modifiers?",
+          "answer": "Keywords controlling visibility of class members:\n- Public: accessible from anywhere\n- Private: only accessible within the class\n- Protected: accessible within class and subclasses\nGood practice: make attributes private, provide public methods (getters/setters)"
+        },
+        {
+          "question": "What is inheritance?",
+          "answer": "Mechanism where a new class (subclass/child) inherits attributes and methods from an existing class (superclass/parent). Enables code reuse and hierarchical classification. Subclass can add new features or override existing ones. Example: Dog inherits from Animal."
+        },
+        {
+          "question": "What is a superclass (parent class)?",
+          "answer": "The class being inherited from. Contains common attributes and methods shared by subclasses. Also called base class. Example: Animal is superclass of Dog, Cat, Bird. More general than subclasses."
+        },
+        {
+          "question": "What is a subclass (child class)?",
+          "answer": "A class that inherits from a superclass. Inherits all non-private members of parent. Can add new attributes/methods or override inherited ones. Also called derived class. Example: Dog is subclass of Animal. More specific than superclass."
+        },
+        {
+          "question": "What is polymorphism?",
+          "answer": "The ability of objects of different classes to respond to the same method call in different ways. Two types: overriding (runtime) and overloading (compile-time). Enables flexible code. Example: different animals respond differently to speak() method."
+        },
+        {
+          "question": "What is method overriding?",
+          "answer": "When a subclass provides a specific implementation of a method already defined in its superclass. Same method name, parameters, and return type. Subclass version is called for subclass objects. Example: Dog.speak() overrides Animal.speak()."
+        },
+        {
+          "question": "What is method overloading?",
+          "answer": "Multiple methods in same class with same name but different parameters (number, type, or order). Return type can differ. Compiler determines which version to call based on arguments. Example: print(int), print(string), print(int, int)."
+        },
+        {
+          "question": "What is a constructor?",
+          "answer": "A special method called when an object is created. Initializes object attributes. Same name as class, no return type. Can be overloaded. If none defined, default constructor is provided. Example: Car(color, model)."
+        },
+        {
+          "question": "What is the 'this' keyword?",
+          "answer": "A reference to the current object. Used to: distinguish between parameters and attributes with same name, pass current object to other methods, call other constructors. Example: this.name = name; (parameter name assigns to attribute name)."
+        },
+        {
+          "question": "What is aggregation?",
+          "answer": "A 'has-a' relationship where one class contains objects of another class as attributes. Container and contained objects can exist independently. Example: Car has Engine, but Engine can exist without Car. Weaker relationship than composition."
+        },
+        {
+          "question": "What is composition?",
+          "answer": "A strong 'has-a' relationship where contained objects cannot exist independently of container. When container is destroyed, contained objects are too. Example: House has Rooms - destroying House destroys its Rooms. Stronger than aggregation."
+        }
+      ]
+    },
+    {
+      "name": "8. Algorithm Efficiency & Big O",
+      "flashcards": [
+        {
+          "question": "What is Big O notation?",
+          "answer": "Mathematical notation describing algorithm efficiency by expressing how runtime or space requirements grow with input size n. Focuses on worst-case scenario and growth rate, ignoring constants. Examples: O(1), O(log n), O(n), O(n²)."
+        },
+        {
+          "question": "What is O(1) - Constant time?",
+          "answer": "Algorithm takes same time regardless of input size. Examples: array access by index, hash table lookup (average), push/pop on stack. Most efficient. Example: return array[5] - always one operation."
+        },
+        {
+          "question": "What is O(log n) - Logarithmic time?",
+          "answer": "Algorithm runtime increases logarithmically with input size. Doubles input only adds one more operation. Very efficient for large datasets. Examples: binary search, balanced BST operations. Grows very slowly."
+        },
+        {
+          "question": "What is O(n) - Linear time?",
+          "answer": "Algorithm runtime increases proportionally with input size. Double input, double time. Examples: linear search, traversing array/list, finding min/max. Acceptable for most purposes."
+        },
+        {
+          "question": "What is O(n log n) - Linearithmic time?",
+          "answer": "Algorithm runtime is n multiplied by log n. Common in efficient sorting algorithms. Examples: merge sort, quick sort (average), heap sort. Good efficiency for sorting. Much better than O(n²)."
+        },
+        {
+          "question": "What is O(n²) - Quadratic time?",
+          "answer": "Algorithm runtime is proportional to square of input size. Often involves nested loops. Examples: bubble sort, insertion sort, selection sort. Inefficient for large datasets. Double input, quadruple time."
+        },
+        {
+          "question": "What is O(2ⁿ) - Exponential time?",
+          "answer": "Algorithm runtime doubles with each addition to input. Very inefficient. Examples: recursive fibonacci without memoization, generating all subsets. Quickly becomes impractical for even moderate n. Add one item, double time."
+        },
+        {
+          "question": "What is O(n!) - Factorial time?",
+          "answer": "Algorithm runtime is factorial of input size. Extremely inefficient. Examples: generating all permutations, traveling salesman brute force. Only practical for very small inputs (n < 12)."
+        },
+        {
+          "question": "Compare common Big O complexities",
+          "answer": "From best to worst:\nO(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)\n\nFor n=100:\nO(1): 1 operation\nO(log n): ~7 operations\nO(n): 100 operations\nO(n²): 10,000 operations\nO(2ⁿ): ~10³⁰ operations"
+        },
+        {
+          "question": "How do you determine time complexity?",
+          "answer": "1. Count operations as function of n\n2. Keep fastest-growing term\n3. Drop constants and coefficients\nExample: 3n² + 5n + 2 → O(n²)\nNested loops often indicate O(n²) or worse\nDividing problem in half suggests O(log n)"
+        },
+        {
+          "question": "What is space complexity?",
+          "answer": "Amount of memory an algorithm uses relative to input size. Uses same Big O notation. Includes: variables, data structures, recursion stack. Trade-off: often can reduce time by using more space (memoization) or vice versa."
+        },
+        {
+          "question": "What is the time complexity of common operations?",
+          "answer": "Array access: O(1)\nArray search (unsorted): O(n)\nArray insertion/deletion: O(n)\nLinked list access: O(n)\nLinked list insertion/deletion: O(1) if at head\nBinary search: O(log n)\nBubble sort: O(n²)\nMerge sort: O(n log n)\nHash table get/put (average): O(1)"
+        }
+      ]
+    },
+    {
+      "name": "9. Sorting Algorithms",
+      "flashcards": [
+        {
+          "question": "What is bubble sort?",
+          "answer": "Simple sorting algorithm that repeatedly steps through list, compares adjacent elements and swaps if in wrong order. Continues until no swaps needed. Called 'bubble' because larger values bubble to the end. Time: O(n²), Space: O(1). Stable but inefficient."
+        },
+        {
+          "question": "Describe bubble sort algorithm",
+          "answer": "for i = 0 to n-1\n  swapped = false\n  for j = 0 to n-i-2\n    if array[j] > array[j+1] then\n      swap(array[j], array[j+1])\n      swapped = true\n    end if\n  end for\n  if not swapped then break  // optimization\nend for\n\nEach pass moves largest unsorted element to correct position."
+        },
+        {
+          "question": "What is insertion sort?",
+          "answer": "Builds sorted array one element at a time by inserting each element into its correct position. Like sorting playing cards in your hand. Time: O(n²) worst, O(n) best (already sorted), Space: O(1). Efficient for small or nearly-sorted data. Stable."
+        },
+        {
+          "question": "Describe insertion sort algorithm",
+          "answer": "for i = 1 to n-1\n  key = array[i]\n  j = i - 1\n  while j >= 0 and array[j] > key\n    array[j+1] = array[j]\n    j = j - 1\n  end while\n  array[j+1] = key\nend for\n\nMaintains sorted portion on left, inserts next element into correct position."
+        },
+        {
+          "question": "What is merge sort?",
+          "answer": "Divide-and-conquer algorithm that divides array in half recursively, sorts each half, then merges sorted halves. Always O(n log n) time regardless of input. Space: O(n) for temporary arrays. Stable. Predictable performance. Not in-place."
+        },
+        {
+          "question": "Describe merge sort algorithm",
+          "answer": "function mergeSort(array)\n  if length <= 1 then return array\n  mid = length / 2\n  left = mergeSort(array[0...mid-1])\n  right = mergeSort(array[mid...end])\n  return merge(left, right)\nend function\n\nfunction merge(left, right)\n  // combine two sorted arrays into one sorted array\n  // compare first elements, take smaller\nend function"
+        },
+        {
+          "question": "What is quick sort?",
+          "answer": "Divide-and-conquer algorithm using a pivot to partition array. Elements less than pivot go left, greater go right. Recursively sort partitions. Average: O(n log n), Worst: O(n²), Space: O(log n). In-place. Unstable. Very fast in practice."
+        },
+        {
+          "question": "Describe quick sort algorithm",
+          "answer": "function quickSort(array, low, high)\n  if low < high then\n    pivot = partition(array, low, high)\n    quickSort(array, low, pivot-1)\n    quickSort(array, pivot+1, high)\n  end if\nend function\n\nfunction partition(array, low, high)\n  // choose pivot, rearrange array\n  // return pivot position\nend function\n\nChoice of pivot affects performance."
+        },
+        {
+          "question": "What is a stable sorting algorithm?",
+          "answer": "A sorting algorithm that preserves the relative order of elements with equal values. Example: sorting [(3, 'a'), (1, 'b'), (3, 'c')] keeps (3, 'a') before (3, 'c'). Stable: bubble, insertion, merge. Unstable: quick, selection, heap."
+        },
+        {
+          "question": "Compare sorting algorithm complexities",
+          "answer": "Bubble Sort: O(n²) time, O(1) space, stable\nInsertion Sort: O(n²) time, O(1) space, stable\nSelection Sort: O(n²) time, O(1) space, unstable\nMerge Sort: O(n log n) time, O(n) space, stable\nQuick Sort: O(n log n) avg, O(n²) worst, O(log n) space, unstable\nHeap Sort: O(n log n) time, O(1) space, unstable"
+        }
+      ]
+    },
+    {
+      "name": "10. Searching Algorithms",
+      "flashcards": [
+        {
+          "question": "What is linear search?",
+          "answer": "Simple search algorithm checking each element sequentially until target found or end reached. Works on unsorted data. Time: O(n), Space: O(1). Best case: O(1) if first element. Worst: O(n) if last or not present."
+        },
+        {
+          "question": "Describe linear search algorithm",
+          "answer": "function linearSearch(array, target)\n  for i = 0 to length-1\n    if array[i] = target then\n      return i  // found at index i\n    end if\n  end for\n  return -1  // not found\nend function\n\nSimple but inefficient for large datasets."
+        },
+        {
+          "question": "What is binary search?",
+          "answer": "Efficient search for sorted arrays. Repeatedly divides search space in half by comparing target with middle element. Time: O(log n), Space: O(1) iterative or O(log n) recursive. Requires sorted data. Much faster than linear for large datasets."
+        },
+        {
+          "question": "Describe binary search algorithm (iterative)",
+          "answer": "function binarySearch(array, target)\n  low = 0\n  high = length - 1\n  while low <= high\n    mid = (low + high) / 2\n    if array[mid] = target then\n      return mid\n    else if target < array[mid] then\n      high = mid - 1\n    else\n      low = mid + 1\n    end if\n  end while\n  return -1  // not found\nend function"
+        },
+        {
+          "question": "What are the requirements for binary search?",
+          "answer": "1. Data must be sorted\n2. Must support random access (array, not linked list)\n3. Data should be static or infrequently updated\nIf data changes frequently, cost of sorting may outweigh benefits. For unsorted data, use linear search or hash table."
+        },
+        {
+          "question": "Compare linear and binary search",
+          "answer": "Linear Search:\n+ Works on unsorted data\n+ Simple to implement\n+ Works on any structure\n- O(n) time - slow for large data\n\nBinary Search:\n+ O(log n) time - very fast\n+ Efficient for large datasets\n- Requires sorted data\n- Requires random access"
+        }
+      ]
+    },
+    {
+      "name": "11. File Handling",
+      "flashcards": [
+        {
+          "question": "What are the file access modes?",
+          "answer": "Read mode ('r'): open existing file for reading, error if doesn't exist\nWrite mode ('w'): create new file or overwrite existing\nAppend mode ('a'): add to end of existing file, create if doesn't exist\nRead/Write mode ('r+', 'w+', 'a+'): combination modes"
+        },
+        {
+          "question": "What is a text file?",
+          "answer": "File storing data as human-readable characters using encoding like ASCII or UTF-8. Can be opened in text editor. Examples: .txt, .csv, .json. Lines typically end with newline character. Easy to read but less efficient than binary."
+        },
+        {
+          "question": "What is a binary file?",
+          "answer": "File storing data in binary format (0s and 1s) not human-readable. More efficient storage than text. Examples: .exe, .jpg, .mp3, .db. Requires specific program to read. Faster to process, smaller file size."
+        },
+        {
+          "question": "What are the steps for file handling?",
+          "answer": "1. Open file (specify mode)\n2. Read from or write to file\n3. Close file (important to free resources)\n\nGood practice: use try-except blocks to handle errors, always close files (or use with statement in Python)"
+        },
+        {
+          "question": "What is a CSV file?",
+          "answer": "Comma-Separated Values file storing tabular data. Each line is a record, commas separate fields. First line often contains headers. Human-readable, widely supported. Example:\nname,age,grade\nAlice,16,A\nBob,17,B"
+        },
+        {
+          "question": "What is JSON?",
+          "answer": "JavaScript Object Notation - text format for storing and exchanging data. Uses key-value pairs and arrays. Human-readable, language-independent, supports nested structures. Common for web APIs and config files. Example: {\"name\": \"Alice\", \"age\": 16}"
+        },
+        {
+          "question": "What is XML?",
+          "answer": "eXtensible Markup Language - markup language for storing and transporting data. Uses tags like HTML but custom tags. Hierarchical structure, self-descriptive, verbose. Example: <student><name>Alice</name><age>16</age></student>"
+        },
+        {
+          "question": "What are file handling errors?",
+          "answer": "FileNotFoundError: file doesn't exist (read mode)\nPermissionError: no permission to access file\nIOError: general input/output errors\nEOFError: read past end of file\nGood practice: use exception handling to catch and handle these errors gracefully"
+        }
+      ]
+    },
+    {
+      "name": "12. Exception Handling",
+      "flashcards": [
+        {
+          "question": "What is exception handling?",
+          "answer": "Mechanism for handling runtime errors gracefully without crashing the program. Uses try-catch-finally blocks. Separates error-handling code from normal code. Makes programs more robust and user-friendly."
+        },
+        {
+          "question": "What is a try-except block?",
+          "answer": "try block: contains code that might raise an exception\nexcept block: handles the exception if it occurs\nProgram continues after except block. Can have multiple except blocks for different exception types. Example: try reading file, except handle FileNotFoundError."
+        },
+        {
+          "question": "What is a finally block?",
+          "answer": "Code that always executes whether exception occurred or not. Used for cleanup: closing files, releasing resources, disconnecting from database. Runs after try and except blocks. Optional but good practice for resource management."
+        },
+        {
+          "question": "What are common exception types?",
+          "answer": "ValueError: invalid value (e.g., int('abc'))\nTypeError: wrong type (e.g., 'a' + 5)\nZeroDivisionError: division by zero\nIndexError: index out of range\nKeyError: key not in dictionary\nFileNotFoundError: file doesn't exist\nAttributeError: invalid attribute access"
+        },
+        {
+          "question": "What is the raise statement?",
+          "answer": "Manually triggers an exception. Used for: input validation, enforcing constraints, custom error conditions. Example: if age < 0: raise ValueError('Age cannot be negative'). Can re-raise caught exceptions for higher-level handling."
+        },
+        {
+          "question": "Why use exception handling?",
+          "answer": "1. Prevents program crashes\n2. Provides meaningful error messages\n3. Separates error handling from normal logic\n4. Enables recovery from errors\n5. Makes code more robust and maintainable\n6. Improves user experience"
+        }
+      ]
+    },
+    {
+      "name": "13. SQL & Databases",
+      "flashcards": [
+        {
+          "question": "What is SQL?",
+          "answer": "Structured Query Language - standard language for managing relational databases. Used to: create/modify database structure, insert/update/delete data, query data. Not case-sensitive. Declarative (say what you want, not how to get it)."
+        },
+        {
+          "question": "What is a relational database?",
+          "answer": "Database organizing data into tables (relations) with rows (records/tuples) and columns (attributes/fields). Tables connected via relationships using keys. Examples: MySQL, PostgreSQL, SQLite. Reduces redundancy through normalization."
+        },
+        {
+          "question": "What is a primary key?",
+          "answer": "A field (or combination of fields) that uniquely identifies each record in a table. Must be: unique, not null, unchanging. Only one primary key per table. Often an ID number. Ensures entity integrity."
+        },
+        {
+          "question": "What is a foreign key?",
+          "answer": "A field in one table that references the primary key of another table. Creates relationship between tables. Can be null. Can have multiple foreign keys per table. Ensures referential integrity. Example: StudentID in Enrollment table references Students table."
+        },
+        {
+          "question": "What is the SELECT statement?",
+          "answer": "Retrieves data from database.\nSyntax: SELECT column1, column2 FROM table WHERE condition ORDER BY column\nSELECT * selects all columns\nWHERE filters rows\nORDER BY sorts results (ASC/DESC)\nExample: SELECT name, age FROM students WHERE age > 16"
+        },
+        {
+          "question": "What is the INSERT statement?",
+          "answer": "Adds new records to table.\nSyntax: INSERT INTO table (column1, column2) VALUES (value1, value2)\nColumns are optional if providing all values in order\nExample: INSERT INTO students (name, age, grade) VALUES ('Alice', 16, 'A')"
+        },
+        {
+          "question": "What is the UPDATE statement?",
+          "answer": "Modifies existing records.\nSyntax: UPDATE table SET column1 = value1, column2 = value2 WHERE condition\nWHERE clause is crucial - without it, ALL records are updated!\nExample: UPDATE students SET grade = 'B' WHERE name = 'Alice'"
+        },
+        {
+          "question": "What is the DELETE statement?",
+          "answer": "Removes records from table.\nSyntax: DELETE FROM table WHERE condition\nWHERE clause is crucial - without it, ALL records are deleted!\nExample: DELETE FROM students WHERE age < 16\nDoesn't delete table structure, only data."
+        },
+        {
+          "question": "What is a JOIN?",
+          "answer": "Combines rows from two or more tables based on related column.\nINNER JOIN: returns matching records from both tables\nLEFT JOIN: all from left table, matching from right\nRIGHT JOIN: all from right table, matching from left\nExample: SELECT * FROM students INNER JOIN enrollments ON students.id = enrollments.student_id"
+        },
+        {
+          "question": "What are SQL aggregate functions?",
+          "answer": "Functions that perform calculations on multiple rows:\nCOUNT(): number of rows\nSUM(): total of values\nAVG(): average of values\nMAX(): largest value\nMIN(): smallest value\nExample: SELECT COUNT(*) FROM students WHERE grade = 'A'"
+        },
+        {
+          "question": "What is the GROUP BY clause?",
+          "answer": "Groups rows with same values in specified columns for aggregate functions.\nSyntax: SELECT column, COUNT(*) FROM table GROUP BY column\nOften used with HAVING to filter groups\nExample: SELECT grade, COUNT(*) FROM students GROUP BY grade"
+        },
+        {
+          "question": "What is database normalization?",
+          "answer": "Process of organizing database to reduce redundancy and improve data integrity. Involves dividing large tables into smaller ones and defining relationships. Main forms: 1NF, 2NF, 3NF. Benefits: less duplication, easier updates, better consistency."
+        }
+      ]
+    },
+    {
+      "name": "14. Dictionaries & Hash Tables",
+      "flashcards": [
+        {
+          "question": "What is a hash table?",
+          "answer": "Data structure implementing associative array (dictionary) using hash function to compute index for storing values. Maps keys to values. Average O(1) for insert, delete, search. Also called hash map. Handles collisions using chaining or open addressing."
+        },
+        {
+          "question": "What is a hash function?",
+          "answer": "Function that converts input (key) into integer (hash code) used as array index. Should be: fast to compute, deterministic (same input → same output), uniform distribution. Examples: modulo, multiplication method. Good hash function minimizes collisions."
+        },
+        {
+          "question": "What is a collision in hash tables?",
+          "answer": "When two different keys hash to the same index. Inevitable with finite array size. Handling methods: chaining (linked lists at each index), open addressing (find next available slot). Affects performance - too many collisions degrade to O(n)."
+        },
+        {
+          "question": "What is chaining in hash tables?",
+          "answer": "Collision resolution method where each array index stores a linked list of all key-value pairs that hash to that index. Advantages: simple, handles many collisions, no clustering. Disadvantages: extra memory for pointers, cache performance."
+        },
+        {
+          "question": "What is the load factor?",
+          "answer": "Ratio of number of entries to number of buckets in hash table. Load factor = n / k (n = entries, k = buckets). High load factor → more collisions → worse performance. Hash tables typically resize when load factor exceeds threshold (e.g., 0.75)."
+        },
+        {
+          "question": "What are dictionary operations?",
+          "answer": "insert/put(key, value): add or update key-value pair - O(1) average\nget(key): retrieve value for key - O(1) average\ndelete/remove(key): remove key-value pair - O(1) average\ncontains(key): check if key exists - O(1) average\nkeys(): return all keys\nvalues(): return all values"
+        }
+      ]
+    },
+    {
+      "name": "15. Algorithm Design Techniques",
+      "flashcards": [
+        {
+          "question": "What is divide and conquer?",
+          "answer": "Algorithm design paradigm that breaks problem into smaller subproblems, solves them recursively, then combines solutions. Steps: divide, conquer, combine. Examples: merge sort, quick sort, binary search. Often uses recursion. Efficient but may have overhead."
+        },
+        {
+          "question": "What is dynamic programming?",
+          "answer": "Optimization technique that solves complex problems by breaking them into overlapping subproblems, solving each once, and storing results (memoization). Avoids redundant computation. Examples: Fibonacci with memoization, shortest path, knapsack problem. Bottom-up or top-down approach."
+        },
+        {
+          "question": "What is a greedy algorithm?",
+          "answer": "Algorithm that makes locally optimal choice at each step hoping to find global optimum. Doesn't reconsider choices. Fast but doesn't always give optimal solution. Examples: Dijkstra's algorithm, Huffman coding, activity selection. Works when greedy choice property holds."
+        },
+        {
+          "question": "What is backtracking?",
+          "answer": "Algorithm technique for finding solutions by trying possibilities and abandoning (backtracking) when they fail. Systematic trial and error. Uses recursion. Examples: N-Queens problem, Sudoku solver, maze solving. Can be slow but guarantees finding solution if one exists."
+        },
+        {
+          "question": "What is brute force?",
+          "answer": "Straightforward approach trying all possible solutions and selecting best. Simple to implement but often inefficient. Guaranteed to find solution if one exists. Examples: trying all permutations, exhaustive search. Use when: problem size is small, correctness is critical, no better algorithm known."
+        }
+      ]
+    }
+  ],
+  "total_flashcards": 196,
+  "study_tips": [
+    "Practice writing code for each algorithm - don't just memorize",
+    "Trace through algorithms with example data to understand how they work",
+    "Draw diagrams for data structures (trees, graphs, stacks, queues)",
+    "Understand when to use each data structure and algorithm",
+    "Practice Big O analysis by counting operations in code",
+    "Work through past paper programming questions",
+    "Implement sorting and searching algorithms from scratch",
+    "Understand recursion by drawing call stacks",
+    "Practice SQL queries with sample databases",
+    "Learn to recognize which algorithm design technique fits each problem",
+    "Understand trade-offs: time vs space, simplicity vs efficiency",
+    "Review OOP concepts with real-world examples"
+  ]
+}

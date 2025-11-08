@@ -1,0 +1,642 @@
+{
+  "title": "A Level Computer Science - Unit 1: Computer Systems",
+  "description": "Comprehensive flashcards covering all topics in A Level Computer Science Unit 1",
+  "categories": [
+    {
+      "name": "1. Computer Components & Architecture",
+      "flashcards": [
+        {
+          "question": "What is the Von Neumann architecture?",
+          "answer": "A computer architecture where both program instructions and data are stored in the same memory. It consists of a CPU, memory unit, and input/output mechanisms, with a single shared bus for data and instructions."
+        },
+        {
+          "question": "What are the main components of the CPU?",
+          "answer": "1. Arithmetic Logic Unit (ALU)\n2. Control Unit (CU)\n3. Registers (including PC, ACC, MAR, MDR, CIR)\n4. Cache memory"
+        },
+        {
+          "question": "What is the function of the Arithmetic Logic Unit (ALU)?",
+          "answer": "The ALU performs arithmetic operations (addition, subtraction) and logical operations (AND, OR, NOT, comparisons) on data."
+        },
+        {
+          "question": "What is the function of the Control Unit (CU)?",
+          "answer": "The Control Unit coordinates and controls all operations within the CPU. It decodes instructions, sends control signals to other components, and manages the fetch-decode-execute cycle."
+        },
+        {
+          "question": "What is the Program Counter (PC)?",
+          "answer": "A register that holds the memory address of the next instruction to be fetched and executed. It is automatically incremented after each instruction fetch."
+        },
+        {
+          "question": "What is the Accumulator (ACC)?",
+          "answer": "A register that stores the results of calculations performed by the ALU. It holds intermediate results during processing."
+        },
+        {
+          "question": "What is the Memory Address Register (MAR)?",
+          "answer": "A register that holds the memory address of the data or instruction that needs to be accessed (read from or written to)."
+        },
+        {
+          "question": "What is the Memory Data Register (MDR)?",
+          "answer": "A register that temporarily stores data that has been read from memory or data that is about to be written to memory. Also known as Memory Buffer Register (MBR)."
+        },
+        {
+          "question": "What is the Current Instruction Register (CIR)?",
+          "answer": "A register that holds the current instruction being decoded and executed. It stores the instruction after it has been fetched from memory."
+        },
+        {
+          "question": "What is cache memory?",
+          "answer": "A small amount of very fast memory located inside or close to the CPU that stores frequently accessed data and instructions to speed up processing. It sits between the CPU and main memory."
+        },
+        {
+          "question": "What are the levels of cache memory?",
+          "answer": "L1 Cache: Smallest and fastest, built into CPU cores\nL2 Cache: Larger than L1, may be shared between cores\nL3 Cache: Largest and slowest cache, shared across all cores"
+        },
+        {
+          "question": "What is the Harvard architecture?",
+          "answer": "A computer architecture that has separate memory storage and pathways for instructions and data, allowing simultaneous access to both. Used in embedded systems and microcontrollers."
+        }
+      ]
+    },
+    {
+      "name": "2. Fetch-Decode-Execute Cycle",
+      "flashcards": [
+        {
+          "question": "What is the Fetch-Decode-Execute Cycle?",
+          "answer": "The fundamental process by which a CPU retrieves, interprets, and executes instructions. It repeats continuously while the computer is running."
+        },
+        {
+          "question": "What happens during the FETCH stage?",
+          "answer": "1. Address from PC is copied to MAR\n2. Instruction at that address is copied to MDR\n3. Instruction is copied from MDR to CIR\n4. PC is incremented to point to next instruction"
+        },
+        {
+          "question": "What happens during the DECODE stage?",
+          "answer": "The Control Unit decodes the instruction in the CIR, determining what operation needs to be performed and what data is required."
+        },
+        {
+          "question": "What happens during the EXECUTE stage?",
+          "answer": "The instruction is carried out. This may involve:\n- The ALU performing calculations\n- Data being moved between registers\n- Reading/writing to memory\n- Jumping to a different instruction"
+        },
+        {
+          "question": "What factors affect CPU performance?",
+          "answer": "1. Clock Speed (measured in GHz)\n2. Number of cores\n3. Cache size and type\n4. Word length/bus width\n5. Architecture type"
+        },
+        {
+          "question": "What is clock speed?",
+          "answer": "The number of fetch-decode-execute cycles the CPU can complete per second, measured in Hertz (Hz). A 3.5 GHz processor completes 3.5 billion cycles per second."
+        },
+        {
+          "question": "What are cores in a CPU?",
+          "answer": "Independent processing units within a single CPU chip. Multi-core processors can execute multiple instructions simultaneously (parallel processing), improving performance for multi-threaded applications."
+        },
+        {
+          "question": "What is word length/bus width?",
+          "answer": "The number of bits that can be transferred simultaneously through the data bus or processed in a single operation. Common sizes are 32-bit or 64-bit."
+        }
+      ]
+    },
+    {
+      "name": "3. Processor Types & Architecture",
+      "flashcards": [
+        {
+          "question": "What is CISC (Complex Instruction Set Computer)?",
+          "answer": "A processor architecture with a large instruction set, where single instructions can execute complex operations. Examples: Intel x86, AMD processors. More complex circuitry but fewer instructions needed for programs."
+        },
+        {
+          "question": "What is RISC (Reduced Instruction Set Computer)?",
+          "answer": "A processor architecture with a smaller, simpler instruction set where each instruction executes in a single clock cycle. Examples: ARM processors. Simpler circuitry, better for pipelining, more energy efficient."
+        },
+        {
+          "question": "What are the advantages of RISC?",
+          "answer": "1. Simpler instructions execute faster\n2. Better for pipelining\n3. More energy efficient\n4. Lower heat generation\n5. Lower cost to manufacture"
+        },
+        {
+          "question": "What are the advantages of CISC?",
+          "answer": "1. Fewer instructions needed for tasks\n2. More memory efficient (smaller programs)\n3. Better for complex operations\n4. Easier to write assembly code"
+        },
+        {
+          "question": "What is pipelining?",
+          "answer": "A technique where multiple instructions are overlapped in execution. While one instruction is being executed, the next is being decoded, and another is being fetched. This increases throughput and CPU efficiency."
+        },
+        {
+          "question": "What is parallel processing?",
+          "answer": "The simultaneous execution of multiple instructions or tasks using multiple processors or cores. Improves performance for applications designed to use multiple threads."
+        },
+        {
+          "question": "What is a GPU (Graphics Processing Unit)?",
+          "answer": "A specialized processor designed for parallel processing of graphics and visual data. Contains thousands of small cores optimized for handling multiple tasks simultaneously, useful for graphics rendering, AI, and scientific computing."
+        },
+        {
+          "question": "What is a multi-core processor?",
+          "answer": "A single CPU chip containing multiple independent processing cores, each capable of executing instructions. Allows true parallel processing and improved multitasking performance."
+        }
+      ]
+    },
+    {
+      "name": "4. Input, Output & Storage Devices",
+      "flashcards": [
+        {
+          "question": "What are input devices? Give examples.",
+          "answer": "Devices that allow data to enter the computer system.\nExamples: Keyboard, mouse, touchscreen, microphone, webcam, scanner, barcode reader, sensors (temperature, pressure, motion)"
+        },
+        {
+          "question": "What are output devices? Give examples.",
+          "answer": "Devices that allow data to leave the computer system.\nExamples: Monitor/display, printer, speakers, headphones, projector, actuators (motors, LEDs)"
+        },
+        {
+          "question": "What is primary storage?",
+          "answer": "Memory directly accessible by the CPU, including RAM and ROM. It is fast but volatile (except ROM). Used for currently running programs and data."
+        },
+        {
+          "question": "What is RAM (Random Access Memory)?",
+          "answer": "Volatile memory that stores currently running programs and data in use. Data is lost when power is turned off. Fast read/write speeds. Can be accessed in any order."
+        },
+        {
+          "question": "What is ROM (Read Only Memory)?",
+          "answer": "Non-volatile memory that stores permanent instructions (like BIOS/firmware). Data persists when power is off. Cannot be easily modified. Contains boot-up instructions."
+        },
+        {
+          "question": "What is secondary storage? Give examples.",
+          "answer": "Non-volatile storage for long-term data persistence. Slower than primary storage but has much larger capacity.\nExamples: Hard Disk Drive (HDD), Solid State Drive (SSD), USB flash drives, optical discs (CD, DVD, Blu-ray), magnetic tape"
+        },
+        {
+          "question": "What is an HDD (Hard Disk Drive)?",
+          "answer": "A magnetic storage device using spinning platters coated with magnetic material. Read/write heads access data. Large capacity, relatively cheap, but slower than SSDs and has moving parts that can fail."
+        },
+        {
+          "question": "What is an SSD (Solid State Drive)?",
+          "answer": "A storage device using flash memory (no moving parts). Much faster than HDDs, more reliable, silent operation, but more expensive per GB. Uses NAND flash memory."
+        },
+        {
+          "question": "What is virtual memory?",
+          "answer": "A memory management technique where secondary storage (hard drive/SSD) is used as an extension of RAM when physical RAM is full. Slower than RAM but allows running more programs than RAM capacity would normally allow."
+        },
+        {
+          "question": "What are optical storage devices?",
+          "answer": "Storage media that use laser light to read/write data on discs. Types: CD (700MB), DVD (4.7-8.5GB), Blu-ray (25-50GB). Portable and durable but slower than SSDs and can be scratched."
+        }
+      ]
+    },
+    {
+      "name": "5. Operating Systems & Scheduling",
+      "flashcards": [
+        {
+          "question": "What is an operating system (OS)?",
+          "answer": "System software that manages computer hardware and software resources, provides common services for programs, and acts as an interface between users and hardware. Examples: Windows, macOS, Linux, Android."
+        },
+        {
+          "question": "What are the main functions of an operating system?",
+          "answer": "1. Memory management\n2. Processor/CPU scheduling\n3. File management\n4. Device/peripheral management\n5. User interface provision\n6. Security and access control\n7. Error handling"
+        },
+        {
+          "question": "What is process scheduling?",
+          "answer": "The method by which the operating system decides which process gets CPU time and in what order. Essential for multitasking and efficient resource utilization."
+        },
+        {
+          "question": "What is Round Robin scheduling?",
+          "answer": "A scheduling algorithm where each process gets a fixed time slice (quantum) of CPU time in turn. If not completed in that time, it goes to the back of the queue. Fair but may not be efficient for short processes."
+        },
+        {
+          "question": "What is First Come First Served (FCFS) scheduling?",
+          "answer": "Processes are executed in the order they arrive. Simple but can lead to convoy effect where short processes wait for long ones. Non-preemptive."
+        },
+        {
+          "question": "What is Shortest Job First (SJF) scheduling?",
+          "answer": "The process with the shortest execution time is selected next. Minimizes average waiting time but requires knowing execution times in advance and can cause starvation of longer processes."
+        },
+        {
+          "question": "What is Multi-Level Feedback Queue scheduling?",
+          "answer": "Uses multiple queues with different priorities. Processes can move between queues based on behavior. CPU-intensive processes move to lower priority queues while I/O-bound processes stay in higher priority queues. Flexible and adaptive."
+        },
+        {
+          "question": "What is the difference between preemptive and non-preemptive scheduling?",
+          "answer": "Preemptive: OS can interrupt a running process and allocate CPU to another process (e.g., Round Robin).\nNon-preemptive: Once a process starts, it runs until completion or voluntarily yields CPU (e.g., FCFS)."
+        },
+        {
+          "question": "What is interrupt handling?",
+          "answer": "The process of responding to signals (interrupts) from hardware or software. The CPU temporarily stops current execution, saves its state, handles the interrupt, then resumes. Examples: keyboard input, mouse click, timer, hardware errors."
+        }
+      ]
+    },
+    {
+      "name": "6. Networking Fundamentals",
+      "flashcards": [
+        {
+          "question": "What is a LAN (Local Area Network)?",
+          "answer": "A network covering a small geographical area (single building or campus). Characteristics: High speed, owned by single organization, low latency, uses Ethernet or Wi-Fi."
+        },
+        {
+          "question": "What is a WAN (Wide Area Network)?",
+          "answer": "A network covering a large geographical area (cities, countries, globally). Characteristics: Lower speed than LAN, uses third-party infrastructure (ISPs), higher latency. The Internet is the largest WAN."
+        },
+        {
+          "question": "What is the TCP/IP model?",
+          "answer": "A 4-layer protocol stack for network communication:\n1. Application Layer (HTTP, FTP, SMTP, DNS)\n2. Transport Layer (TCP, UDP)\n3. Internet Layer (IP, routing)\n4. Link Layer (Ethernet, Wi-Fi, physical transmission)"
+        },
+        {
+          "question": "What is the Application Layer?",
+          "answer": "The top layer of TCP/IP stack where network applications and protocols operate. Protocols include HTTP (web), FTP (file transfer), SMTP (email), DNS (domain names). Provides services directly to users."
+        },
+        {
+          "question": "What is the Transport Layer?",
+          "answer": "Responsible for end-to-end communication and data delivery. Main protocols:\n- TCP (Transmission Control Protocol): reliable, connection-oriented, error-checking\n- UDP (User Datagram Protocol): faster, connectionless, no error-checking"
+        },
+        {
+          "question": "What is the Internet Layer?",
+          "answer": "Handles addressing and routing of data packets across networks. Uses IP (Internet Protocol) to assign addresses and route packets to their destination. Includes IPv4 and IPv6."
+        },
+        {
+          "question": "What is the Link Layer?",
+          "answer": "The lowest layer that handles physical transmission of data over network hardware. Includes Ethernet, Wi-Fi, MAC addresses. Deals with physical connections and local network communication."
+        },
+        {
+          "question": "What is packet switching?",
+          "answer": "A method where data is broken into small packets that are sent independently across the network and reassembled at destination. Each packet can take different routes. Efficient use of bandwidth, robust, but variable latency."
+        },
+        {
+          "question": "What is circuit switching?",
+          "answer": "A method where a dedicated communication path is established between sender and receiver for the entire duration of transmission (like traditional phone calls). Guaranteed bandwidth but inefficient resource use."
+        },
+        {
+          "question": "What is a protocol?",
+          "answer": "A set of rules and standards that govern how data is transmitted and received over a network. Ensures different devices can communicate effectively. Examples: HTTP, TCP, IP, FTP."
+        },
+        {
+          "question": "What is TCP (Transmission Control Protocol)?",
+          "answer": "A connection-oriented protocol that ensures reliable data transmission. Features: establishes connection (handshake), error-checking, guaranteed delivery, packet ordering, flow control. Used for web browsing, email, file transfer."
+        },
+        {
+          "question": "What is UDP (User Datagram Protocol)?",
+          "answer": "A connectionless protocol for fast data transmission without reliability guarantees. No error-checking or delivery guarantee. Used for streaming, gaming, VoIP, DNS where speed is more important than reliability."
+        },
+        {
+          "question": "What is an IP address?",
+          "answer": "A unique numerical identifier assigned to each device on a network. IPv4 uses 32 bits (e.g., 192.168.1.1), IPv6 uses 128 bits. Allows devices to be located and communicated with on networks."
+        },
+        {
+          "question": "What is DNS (Domain Name System)?",
+          "answer": "A system that translates human-readable domain names (e.g., google.com) into IP addresses that computers use. Acts like a phone book for the internet."
+        },
+        {
+          "question": "What is a MAC address?",
+          "answer": "A unique hardware identifier assigned to network interface cards (NICs). 48 bits long, written in hexadecimal (e.g., AA:BB:CC:DD:EE:FF). Used for communication within local networks at the Link Layer."
+        }
+      ]
+    },
+    {
+      "name": "7. Data Types & Representation",
+      "flashcards": [
+        {
+          "question": "What are primitive data types?",
+          "answer": "Basic data types built into programming languages:\n- Integer: whole numbers\n- Real/Float: decimal numbers\n- Boolean: True/False\n- Character: single character\n- String: sequence of characters"
+        },
+        {
+          "question": "What is an integer data type?",
+          "answer": "A data type for whole numbers (positive, negative, or zero) without decimal points. Examples: -5, 0, 42, 1000. Fixed size in memory (e.g., 16-bit, 32-bit, 64-bit)."
+        },
+        {
+          "question": "What is a real/float data type?",
+          "answer": "A data type for numbers with decimal points. Uses floating-point representation. Examples: 3.14, -0.5, 2.71828. May have precision limitations due to binary representation."
+        },
+        {
+          "question": "What is a boolean data type?",
+          "answer": "A data type with only two possible values: True or False (1 or 0). Used for logical operations and conditions. Typically stored in 1 byte though only needs 1 bit."
+        },
+        {
+          "question": "What is a character data type?",
+          "answer": "A data type representing a single character, stored using a character encoding system like ASCII or Unicode. Examples: 'A', '7', '@'. Typically 1 byte (ASCII) or 2+ bytes (Unicode)."
+        },
+        {
+          "question": "What is a string data type?",
+          "answer": "A sequence of characters treated as a single unit. Can be of variable or fixed length. Examples: \"Hello\", \"Computer Science\", \"\". May be represented as arrays of characters."
+        },
+        {
+          "question": "What is ASCII encoding?",
+          "answer": "American Standard Code for Information Interchange. A 7-bit character encoding (0-127) representing English letters, digits, and symbols. Each character has a unique code (e.g., 'A' = 65, '0' = 48)."
+        },
+        {
+          "question": "What is Unicode encoding?",
+          "answer": "A universal character encoding standard supporting characters from all writing systems. UTF-8 uses 1-4 bytes per character, UTF-16 uses 2-4 bytes, UTF-32 uses 4 bytes. Backward compatible with ASCII."
+        },
+        {
+          "question": "What is binary number system?",
+          "answer": "Base-2 number system using only two digits: 0 and 1. Each digit is a 'bit'. Computers use binary because it maps to electronic states (on/off). Example: 1011₂ = 11₁₀"
+        },
+        {
+          "question": "What is hexadecimal number system?",
+          "answer": "Base-16 number system using digits 0-9 and letters A-F (10-15). Used as shorthand for binary. Each hex digit represents 4 binary bits. Example: FF₁₆ = 255₁₀ = 11111111₂"
+        },
+        {
+          "question": "How do you convert binary to denary (decimal)?",
+          "answer": "Multiply each bit by its position value (powers of 2) and sum:\n1011₂ = (1×8) + (0×4) + (1×2) + (1×1) = 8 + 0 + 2 + 1 = 11₁₀\nPositions from right: 2⁰, 2¹, 2², 2³..."
+        },
+        {
+          "question": "How do you convert denary to binary?",
+          "answer": "Repeatedly divide by 2 and record remainders:\n11 ÷ 2 = 5 remainder 1\n5 ÷ 2 = 2 remainder 1\n2 ÷ 2 = 1 remainder 0\n1 ÷ 2 = 0 remainder 1\nRead remainders bottom-to-top: 1011₂"
+        },
+        {
+          "question": "What is binary addition?",
+          "answer": "Rules:\n0 + 0 = 0\n0 + 1 = 1\n1 + 0 = 1\n1 + 1 = 10 (0, carry 1)\n1 + 1 + 1 = 11 (1, carry 1)\nCarry bits to next column like decimal addition."
+        },
+        {
+          "question": "What is two's complement?",
+          "answer": "A method for representing signed (positive and negative) integers in binary. To negate: invert all bits then add 1. The leftmost bit indicates sign (0=positive, 1=negative). Allows simple addition circuitry for positive and negative numbers."
+        },
+        {
+          "question": "What is overflow in binary arithmetic?",
+          "answer": "When the result of a calculation is too large to be represented in the available number of bits. The carry bit extends beyond the available space, causing an incorrect result. Example: adding two 8-bit numbers resulting in 9 bits."
+        }
+      ]
+    },
+    {
+      "name": "8. Images & Sound Representation",
+      "flashcards": [
+        {
+          "question": "What is a bitmap image?",
+          "answer": "An image represented as a grid of pixels (picture elements), where each pixel has a specific color value. File size depends on resolution and color depth. Examples: BMP, PNG, JPEG."
+        },
+        {
+          "question": "What is resolution in images?",
+          "answer": "The number of pixels in an image, usually expressed as width × height (e.g., 1920×1080). Higher resolution means more detail but larger file size."
+        },
+        {
+          "question": "What is color depth/bit depth in images?",
+          "answer": "The number of bits used to represent the color of each pixel. More bits = more colors possible:\n1-bit: 2 colors (black/white)\n8-bit: 256 colors\n24-bit: 16.7 million colors (8 bits each for Red, Green, Blue)"
+        },
+        {
+          "question": "How do you calculate image file size?",
+          "answer": "File Size = Width × Height × Color Depth\nExample: 1920×1080 image with 24-bit color:\n1920 × 1080 × 24 = 49,766,400 bits = 6,220,800 bytes ≈ 6.2 MB\n(Before compression)"
+        },
+        {
+          "question": "What is metadata in image files?",
+          "answer": "Data about the image stored alongside pixel data:\n- Image dimensions (width, height)\n- Color depth\n- Creation date/time\n- Camera settings (ISO, shutter speed, aperture)\n- GPS location\n- Author/copyright"
+        },
+        {
+          "question": "What is the difference between vector and bitmap graphics?",
+          "answer": "Bitmap: Grid of pixels, loses quality when scaled, larger files for complex images. Used for photos.\nVector: Mathematical equations for shapes/lines, scales without quality loss, smaller files for simple images. Used for logos, illustrations."
+        },
+        {
+          "question": "What is sound sampling?",
+          "answer": "The process of converting analog sound waves into digital data by measuring (sampling) the amplitude of the wave at regular intervals. Each measurement is a sample."
+        },
+        {
+          "question": "What is sample rate?",
+          "answer": "The number of samples taken per second, measured in Hertz (Hz). Higher sample rate = better quality audio.\nCD quality: 44,100 Hz (44.1 kHz)\nHuman hearing range: up to ~20 kHz"
+        },
+        {
+          "question": "What is bit depth in audio?",
+          "answer": "The number of bits used to represent each audio sample. Higher bit depth = more precise amplitude values and greater dynamic range.\n8-bit: 256 levels\n16-bit: 65,536 levels (CD quality)\n24-bit: 16.7 million levels (studio quality)"
+        },
+        {
+          "question": "How do you calculate sound file size?",
+          "answer": "File Size = Sample Rate × Bit Depth × Duration × Number of Channels\nExample: 1 minute of CD quality stereo:\n44,100 × 16 × 60 × 2 = 84,672,000 bits ≈ 10.6 MB\n(Before compression)"
+        },
+        {
+          "question": "What is lossy compression?",
+          "answer": "Compression that reduces file size by permanently removing some data. Results in smaller files but quality loss. Used when perfect accuracy isn't critical.\nExamples: JPEG (images), MP3 (audio), MP4 (video)"
+        },
+        {
+          "question": "What is lossless compression?",
+          "answer": "Compression that reduces file size without losing any data. Original can be perfectly reconstructed. Larger files than lossy but maintains quality.\nExamples: PNG (images), FLAC (audio), ZIP (general)"
+        }
+      ]
+    },
+    {
+      "name": "9. Software Development",
+      "flashcards": [
+        {
+          "question": "What are the stages of the software development lifecycle?",
+          "answer": "1. Analysis - understand problem and requirements\n2. Design - plan solution architecture\n3. Implementation - write code\n4. Testing - find and fix bugs\n5. Evaluation - assess if requirements met\n6. Maintenance - updates and bug fixes"
+        },
+        {
+          "question": "What is a high-level programming language?",
+          "answer": "A programming language with abstraction from hardware details, using English-like commands. Easier to learn and write but must be translated. Examples: Python, Java, C++, JavaScript. Portable across different systems."
+        },
+        {
+          "question": "What is a low-level programming language?",
+          "answer": "A programming language close to machine code with little abstraction. Hard to learn but offers fine control over hardware.\nAssembly: one-to-one mapping with machine code\nMachine code: binary instructions executed directly by CPU"
+        },
+        {
+          "question": "What is a compiler?",
+          "answer": "A translator that converts entire high-level source code into machine code before execution. Creates executable file. Advantages: fast execution, code optimization, no translator needed at runtime. Used by C++, C."
+        },
+        {
+          "question": "What is an interpreter?",
+          "answer": "A translator that converts high-level code line-by-line during execution. No executable created. Advantages: easier debugging, instant execution, cross-platform. Disadvantages: slower execution. Used by Python, JavaScript (though modern ones use JIT)."
+        },
+        {
+          "question": "What are integrated development environments (IDEs)?",
+          "answer": "Software applications providing comprehensive facilities for development:\n- Code editor with syntax highlighting\n- Debugger for finding errors\n- Compiler/interpreter\n- Auto-completion\n- Project management\nExamples: Visual Studio, PyCharm, IntelliJ"
+        },
+        {
+          "question": "What is syntax in programming?",
+          "answer": "The set of rules that define the correct structure and format of code in a programming language. Syntax errors prevent code from running. Examples: missing semicolons, incorrect indentation, mismatched brackets."
+        },
+        {
+          "question": "What are variables in programming?",
+          "answer": "Named storage locations in memory that hold data values which can change during program execution. Must have: identifier (name), data type, value. Example: age = 18"
+        },
+        {
+          "question": "What are constants in programming?",
+          "answer": "Named values that cannot be changed during program execution. Used for values that should remain fixed. Examples: PI = 3.14159, MAX_USERS = 100. Improves code readability and maintainability."
+        },
+        {
+          "question": "What are the three programming constructs?",
+          "answer": "1. Sequence: instructions executed in order, line by line\n2. Selection: decisions using IF/ELSE statements\n3. Iteration: repetition using loops (FOR, WHILE)"
+        },
+        {
+          "question": "What is testing in software development?",
+          "answer": "The process of finding errors and verifying software meets requirements. Types:\n- Unit testing: individual components\n- Integration testing: components together\n- System testing: entire system\n- Acceptance testing: meets user needs"
+        }
+      ]
+    },
+    {
+      "name": "10. Legal, Moral, Ethical & Cultural Issues",
+      "flashcards": [
+        {
+          "question": "What is the Data Protection Act?",
+          "answer": "UK law governing how personal data is processed and stored. Key principles: data must be used fairly, lawfully, accurately, kept secure, and only for specified purposes. Gives individuals rights over their personal data."
+        },
+        {
+          "question": "What is the Computer Misuse Act 1990?",
+          "answer": "UK law making it illegal to:\n1. Unauthorized access to computer material (hacking)\n2. Unauthorized access with intent to commit further offenses\n3. Unauthorized modification of computer material (malware, viruses)\nPenalties include fines and imprisonment."
+        },
+        {
+          "question": "What is the Copyright, Designs and Patents Act 1988?",
+          "answer": "UK law protecting intellectual property rights in software, digital media, and creative works. Makes it illegal to copy, modify, or distribute copyrighted material without permission. Protects creators' rights."
+        },
+        {
+          "question": "What are open source licenses?",
+          "answer": "Licenses allowing software source code to be freely used, modified, and distributed. Examples: GPL, MIT, Apache. Benefits: community collaboration, transparency, free to use. Examples: Linux, Firefox, Python."
+        },
+        {
+          "question": "What are proprietary licenses?",
+          "answer": "Licenses where software source code is kept private and usage is restricted. Users typically pay for licenses. Vendor controls updates and features. Examples: Windows, Microsoft Office, Adobe Photoshop."
+        },
+        {
+          "question": "What are ethical issues in computing?",
+          "answer": "Questions about right and wrong behavior:\n- Privacy invasion (surveillance, data collection)\n- Security responsibilities\n- Algorithmic bias and fairness\n- AI decision-making accountability\n- Digital divide and access inequality\n- Environmental impact"
+        },
+        {
+          "question": "What are cultural issues in computing?",
+          "answer": "How technology affects different cultures and societies:\n- Language barriers in software\n- Cultural representation in AI/algorithms\n- Global vs local censorship\n- Digital cultural preservation\n- Different privacy expectations across cultures\n- Technology adoption rates"
+        },
+        {
+          "question": "What are environmental issues in computing?",
+          "answer": "Technology's impact on the environment:\n- E-waste from discarded devices\n- Energy consumption of data centers\n- Carbon footprint of manufacturing\n- Non-renewable resource use\n- Solutions: recycling programs, energy-efficient design, cloud optimization"
+        },
+        {
+          "question": "What is the digital divide?",
+          "answer": "The gap between those with access to modern technology/internet and those without. Factors: income, geography, age, education. Creates inequality in opportunities for education, employment, services, and information access."
+        },
+        {
+          "question": "What are privacy concerns in modern computing?",
+          "answer": "Issues around personal data collection and use:\n- Social media data harvesting\n- Location tracking\n- Targeted advertising\n- Data breaches\n- Government surveillance\n- Facial recognition\n- Cookies and online tracking"
+        },
+        {
+          "question": "What is cybersecurity?",
+          "answer": "Protecting computer systems, networks, and data from theft, damage, or unauthorized access. Involves:\n- Strong passwords and authentication\n- Encryption\n- Firewalls and antivirus\n- Regular updates\n- User education\n- Backup systems"
+        }
+      ]
+    },
+    {
+      "name": "11. Boolean Algebra & Logic",
+      "flashcards": [
+        {
+          "question": "What is Boolean algebra?",
+          "answer": "A mathematical system for manipulating logical values (True/False, 1/0) using logical operations. Fundamental to digital circuit design and computer logic. Named after George Boole."
+        },
+        {
+          "question": "What is the AND operation?",
+          "answer": "A logical operation that returns True only if both inputs are True.\nSymbol: ∧ or •\nTruth table:\n0 AND 0 = 0\n0 AND 1 = 0\n1 AND 0 = 0\n1 AND 1 = 1"
+        },
+        {
+          "question": "What is the OR operation?",
+          "answer": "A logical operation that returns True if at least one input is True.\nSymbol: ∨ or +\nTruth table:\n0 OR 0 = 0\n0 OR 1 = 1\n1 OR 0 = 1\n1 OR 1 = 1"
+        },
+        {
+          "question": "What is the NOT operation?",
+          "answer": "A logical operation that inverts the input (returns opposite value).\nSymbol: ¬ or bar over variable\nTruth table:\nNOT 0 = 1\nNOT 1 = 0"
+        },
+        {
+          "question": "What is the XOR operation?",
+          "answer": "Exclusive OR - returns True if inputs are different.\nSymbol: ⊕\nTruth table:\n0 XOR 0 = 0\n0 XOR 1 = 1\n1 XOR 0 = 1\n1 XOR 1 = 0"
+        },
+        {
+          "question": "What is a logic gate?",
+          "answer": "An electronic circuit that performs a Boolean operation on input signals to produce an output. Building blocks of digital circuits. Types: AND, OR, NOT, NAND, NOR, XOR gates."
+        },
+        {
+          "question": "What is a truth table?",
+          "answer": "A table showing all possible input combinations and their corresponding outputs for a logical expression or circuit. Used to analyze and design logic circuits."
+        },
+        {
+          "question": "What is De Morgan's Law?",
+          "answer": "Rules for simplifying Boolean expressions:\n1. NOT(A AND B) = NOT A OR NOT B\n2. NOT(A OR B) = NOT A AND NOT B\nUseful for circuit simplification and optimization."
+        }
+      ]
+    },
+    {
+      "name": "12. Data Structures",
+      "flashcards": [
+        {
+          "question": "What is an array?",
+          "answer": "A data structure storing multiple values of the same data type in contiguous memory locations, accessed by index. Fixed size, fast access (O(1)), index starts at 0 in most languages. Example: scores[0], scores[1], scores[2]"
+        },
+        {
+          "question": "What are the advantages of arrays?",
+          "answer": "1. Fast access to elements using index (O(1))\n2. Memory efficient for fixed-size data\n3. Simple to use and understand\n4. Good cache locality (elements stored together)"
+        },
+        {
+          "question": "What are the disadvantages of arrays?",
+          "answer": "1. Fixed size - cannot grow/shrink\n2. Insertion/deletion is slow (requires shifting)\n3. Memory waste if not full\n4. All elements must be same type"
+        },
+        {
+          "question": "What is a record/struct?",
+          "answer": "A data structure that groups related data items of different types under one name. Each item is called a field. Example: Student record with name (string), age (integer), grade (char)."
+        },
+        {
+          "question": "What is a list?",
+          "answer": "A dynamic data structure storing ordered elements that can grow/shrink. Unlike arrays, size is flexible. Elements accessed by index. Supports insertion, deletion, searching. Can be implemented as array or linked list."
+        },
+        {
+          "question": "What is a stack?",
+          "answer": "A Last-In-First-Out (LIFO) data structure. Elements added and removed from the same end (top). Operations:\n- Push: add to top\n- Pop: remove from top\n- Peek: view top without removing\nUses: function calls, undo operations, expression evaluation"
+        },
+        {
+          "question": "What is a queue?",
+          "answer": "A First-In-First-Out (FIFO) data structure. Elements added at rear, removed from front. Operations:\n- Enqueue: add to rear\n- Dequeue: remove from front\n- Peek: view front\nUses: printer queues, task scheduling, breadth-first search"
+        },
+        {
+          "question": "What is a circular queue?",
+          "answer": "A queue implementation where the last position connects back to the first position, forming a circle. Efficiently uses fixed memory space by wrapping around. Prevents wasted space in linear queue implementation."
+        },
+        {
+          "question": "What is a linked list?",
+          "answer": "A data structure where elements (nodes) are stored non-contiguously, each containing data and a pointer/reference to the next node. Dynamic size, efficient insertion/deletion, but slower access (O(n)). Types: singly, doubly, circular."
+        }
+      ]
+    },
+    {
+      "name": "13. Algorithms",
+      "flashcards": [
+        {
+          "question": "What is an algorithm?",
+          "answer": "A step-by-step sequence of instructions or rules for solving a problem or completing a task. Must be: unambiguous, executable, finite (terminates). Can be represented using pseudocode, flowcharts, or code."
+        },
+        {
+          "question": "What is computational thinking?",
+          "answer": "A problem-solving approach involving:\n1. Decomposition - breaking problems into smaller parts\n2. Pattern recognition - identifying similarities\n3. Abstraction - focusing on important details\n4. Algorithm design - creating step-by-step solutions"
+        },
+        {
+          "question": "What is linear search?",
+          "answer": "A searching algorithm that checks each element sequentially until target is found or end is reached.\nTime complexity: O(n)\nAdvantages: works on unsorted data, simple\nDisadvantages: slow for large datasets"
+        },
+        {
+          "question": "What is binary search?",
+          "answer": "An efficient searching algorithm for sorted data. Repeatedly divides search space in half by comparing target with middle element.\nTime complexity: O(log n)\nRequires: sorted data\nMuch faster than linear search for large datasets"
+        },
+        {
+          "question": "Describe the binary search algorithm steps",
+          "answer": "1. Find middle element\n2. If target equals middle, found!\n3. If target < middle, search left half\n4. If target > middle, search right half\n5. Repeat until found or search space empty"
+        },
+        {
+          "question": "What is bubble sort?",
+          "answer": "A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if in wrong order. Continues until no swaps needed.\nTime complexity: O(n²)\nSimple but inefficient for large datasets"
+        },
+        {
+          "question": "What is insertion sort?",
+          "answer": "A sorting algorithm that builds sorted array one element at a time. Takes each element and inserts it into its correct position in the sorted portion.\nTime complexity: O(n²)\nEfficient for small or nearly-sorted data"
+        },
+        {
+          "question": "What is merge sort?",
+          "answer": "A divide-and-conquer sorting algorithm. Recursively divides array in half, sorts each half, then merges sorted halves.\nTime complexity: O(n log n)\nStable, predictable, but requires extra memory"
+        },
+        {
+          "question": "Describe the merge sort algorithm steps",
+          "answer": "1. Divide array into two halves\n2. Recursively sort each half\n3. Merge the two sorted halves:\n   - Compare first elements of each\n   - Take smaller, add to result\n   - Repeat until all merged"
+        },
+        {
+          "question": "What is Big O notation?",
+          "answer": "A mathematical notation describing algorithm efficiency by analyzing how runtime or space grows with input size (n). Focuses on worst-case scenario.\nO(1): constant\nO(log n): logarithmic\nO(n): linear\nO(n log n): linearithmic\nO(n²): quadratic"
+        },
+        {
+          "question": "Compare sorting algorithm efficiency",
+          "answer": "Bubble Sort: O(n²) - slow, simple\nInsertion Sort: O(n²) - good for small/nearly-sorted\nMerge Sort: O(n log n) - fast, needs extra space\nQuick Sort: O(n log n) average - fast, in-place\nBest for large data: Merge or Quick Sort"
+        },
+        {
+          "question": "What is a trace table?",
+          "answer": "A table showing how variable values change step-by-step during algorithm execution. Used for:\n- Understanding algorithm behavior\n- Finding errors\n- Tracking loop iterations\nColumns: step number, variables, conditions"
+        }
+      ]
+    }
+  ],
+  "total_flashcards": 175,
+  "study_tips": [
+    "Review each category systematically",
+    "Practice drawing diagrams for CPU architecture and fetch-execute cycle",
+    "Work through binary/hex conversion problems regularly",
+    "Create your own examples for algorithms and trace them",
+    "Test yourself by covering answers and trying to recall",
+    "Focus on understanding concepts, not just memorizing",
+    "Practice past paper questions to apply knowledge",
+    "Make connections between related topics (e.g., how registers relate to fetch-execute cycle)"
+  ]
+}

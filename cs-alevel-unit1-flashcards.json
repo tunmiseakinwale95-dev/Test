@@ -626,9 +626,264 @@
           "answer": "A table showing how variable values change step-by-step during algorithm execution. Used for:\n- Understanding algorithm behavior\n- Finding errors\n- Tracking loop iterations\nColumns: step number, variables, conditions"
         }
       ]
+    },
+    {
+      "name": "14. Encryption & Hashing",
+      "flashcards": [
+        {
+          "question": "What is encryption?",
+          "answer": "The process of converting plaintext (readable data) into ciphertext (unreadable data) using an algorithm and key, to protect data confidentiality during transmission or storage."
+        },
+        {
+          "question": "What is plaintext and ciphertext?",
+          "answer": "Plaintext: Original, readable data before encryption (e.g., 'HELLO')\nCiphertext: Encrypted, unreadable data after encryption (e.g., 'KHOOR')\nDecryption converts ciphertext back to plaintext."
+        },
+        {
+          "question": "What is symmetric encryption?",
+          "answer": "Encryption where the same key is used for both encryption and decryption. Fast and efficient but key distribution is challenging. Examples: AES, DES, Caesar cipher, Vernam cipher."
+        },
+        {
+          "question": "What is asymmetric encryption?",
+          "answer": "Encryption using two different keys: a public key (for encryption) and a private key (for decryption). Solves key distribution problem but slower than symmetric. Examples: RSA, Diffie-Hellman. Used for secure key exchange and digital signatures."
+        },
+        {
+          "question": "What is the Caesar cipher?",
+          "answer": "A simple substitution cipher where each letter is shifted by a fixed number of positions in the alphabet. Example: with shift of 3, A→D, B→E, HELLO→KHOOR. Easy to break by trying all 25 possible shifts (brute force)."
+        },
+        {
+          "question": "How does the Caesar cipher work with an example?",
+          "answer": "Shift each letter by key value. Example with key=3:\nPlaintext: ATTACK\nA→D, T→W, T→W, A→D, C→F, K→N\nCiphertext: DWWDFN\nTo decrypt, shift backwards by 3."
+        },
+        {
+          "question": "What is the Vernam cipher (One-Time Pad)?",
+          "answer": "A theoretically unbreakable encryption method using XOR operation with a random key that is: 1) As long as the message, 2) Truly random, 3) Used only once, 4) Kept secret. Plaintext XOR Key = Ciphertext. Perfectly secure if conditions met."
+        },
+        {
+          "question": "How does the Vernam cipher work?",
+          "answer": "Convert plaintext and key to binary, then XOR each bit:\nPlaintext: H (01001000)\nKey:       K (01001011)\nXOR result: (00000011) = Ciphertext\nTo decrypt: Ciphertext XOR Key = Plaintext\nKey must never be reused."
+        },
+        {
+          "question": "What are the advantages of symmetric encryption?",
+          "answer": "1. Fast encryption/decryption\n2. Efficient for large amounts of data\n3. Less computationally intensive\n4. Simpler algorithms"
+        },
+        {
+          "question": "What are the disadvantages of symmetric encryption?",
+          "answer": "1. Key distribution problem (how to securely share key?)\n2. Need separate key for each pair of users\n3. No authentication of sender\n4. If key compromised, all data exposed"
+        },
+        {
+          "question": "What are the advantages of asymmetric encryption?",
+          "answer": "1. Solves key distribution (public key can be shared openly)\n2. Provides authentication (digital signatures)\n3. No need to share secret keys\n4. Enables secure communication without prior key exchange"
+        },
+        {
+          "question": "What are the disadvantages of asymmetric encryption?",
+          "answer": "1. Much slower than symmetric encryption\n2. More computationally expensive\n3. Not suitable for large data\n4. Requires longer key lengths for same security"
+        },
+        {
+          "question": "What is a hash function?",
+          "answer": "A one-way mathematical function that converts input data of any size into a fixed-size output (hash/digest). Properties: deterministic (same input = same output), fast to compute, one-way (cannot reverse), small change creates completely different hash. Used for passwords, data integrity, digital signatures."
+        },
+        {
+          "question": "What are the properties of a good hash function?",
+          "answer": "1. Deterministic: same input always produces same hash\n2. Fast computation\n3. One-way/irreversible: cannot get original from hash\n4. Avalanche effect: small input change = completely different hash\n5. Collision resistant: hard to find two inputs with same hash\n6. Fixed output size"
+        },
+        {
+          "question": "What is a hash collision?",
+          "answer": "When two different inputs produce the same hash output. While theoretically possible (pigeonhole principle - infinite inputs, finite outputs), good hash functions make collisions extremely rare and computationally infeasible to find intentionally."
+        },
+        {
+          "question": "What is a hash table?",
+          "answer": "A data structure that uses hash functions to map keys to array indices for fast data storage and retrieval. Provides O(1) average-case lookup, insertion, and deletion. Used in dictionaries, databases, caches. Handles collisions using chaining or open addressing."
+        },
+        {
+          "question": "How are hash tables used for password storage?",
+          "answer": "Passwords are hashed before storage. When user logs in:\n1. User enters password\n2. System hashes entered password\n3. Compares hash with stored hash\n4. If match, password correct\nActual password never stored, so data breach doesn't expose passwords. Often uses salt (random data added before hashing) to prevent rainbow table attacks."
+        },
+        {
+          "question": "What is salting in password hashing?",
+          "answer": "Adding random data (salt) to passwords before hashing. Each password gets unique salt stored alongside hash. Prevents rainbow table attacks (pre-computed hash tables) and ensures identical passwords have different hashes. Example: hash('password' + 'x7f2k') ≠ hash('password' + 'a9m1p')"
+        },
+        {
+          "question": "What are common uses of hashing?",
+          "answer": "1. Password storage (secure authentication)\n2. Data integrity verification (checksums)\n3. Digital signatures\n4. Hash tables (data structures)\n5. Blockchain/cryptocurrency\n6. File deduplication\n7. Message authentication codes (MACs)"
+        },
+        {
+          "question": "What is the difference between encryption and hashing?",
+          "answer": "Encryption: Two-way, reversible with key, preserves data for decryption, used for confidentiality\nHashing: One-way, irreversible, fixed output size, destroys original data, used for integrity and authentication\nEncryption protects data in transit/storage; hashing verifies data hasn't changed."
+        }
+      ]
+    },
+    {
+      "name": "15. Databases",
+      "flashcards": [
+        {
+          "question": "What is a database?",
+          "answer": "An organized collection of structured data stored electronically, allowing efficient storage, retrieval, modification, and deletion of data. Managed by Database Management Systems (DBMS) like MySQL, PostgreSQL, Oracle."
+        },
+        {
+          "question": "What is a relational database?",
+          "answer": "A database organized into tables (relations) with rows (records/tuples) and columns (attributes/fields). Tables can be linked using relationships via primary and foreign keys. Uses SQL for querying. Examples: MySQL, PostgreSQL, Oracle, SQL Server."
+        },
+        {
+          "question": "What is a primary key?",
+          "answer": "A unique identifier for each record in a table. Properties: must be unique, cannot be NULL, only one per table. Examples: StudentID, ISBN, CustomerNumber. Ensures each record can be uniquely identified."
+        },
+        {
+          "question": "What is a foreign key?",
+          "answer": "A field in one table that references the primary key in another table, creating a relationship between tables. Used to maintain referential integrity. Example: StudentID in 'Enrollments' table references StudentID in 'Students' table."
+        },
+        {
+          "question": "What is a composite key?",
+          "answer": "A primary key made up of two or more fields combined to create a unique identifier. Used when no single field is unique. Example: StudentID + CourseID together uniquely identify an enrollment record."
+        },
+        {
+          "question": "What is SQL?",
+          "answer": "Structured Query Language - a standard language for managing and manipulating relational databases. Categories: DDL (Data Definition - CREATE, ALTER, DROP), DML (Data Manipulation - SELECT, INSERT, UPDATE, DELETE), DCL (Data Control - GRANT, REVOKE)."
+        },
+        {
+          "question": "What is a SELECT query in SQL?",
+          "answer": "Retrieves data from database tables.\nBasic syntax: SELECT column1, column2 FROM table WHERE condition;\nExamples:\nSELECT * FROM Students; (all columns)\nSELECT name, age FROM Students WHERE age > 16;\nSELECT * FROM Students ORDER BY name;"
+        },
+        {
+          "question": "What is an INSERT query in SQL?",
+          "answer": "Adds new records to a table.\nSyntax: INSERT INTO table (column1, column2) VALUES (value1, value2);\nExample:\nINSERT INTO Students (StudentID, Name, Age) VALUES (101, 'Alice', 17);\nMultiple rows:\nINSERT INTO Students VALUES (102, 'Bob', 18), (103, 'Carol', 16);"
+        },
+        {
+          "question": "What is an UPDATE query in SQL?",
+          "answer": "Modifies existing records in a table.\nSyntax: UPDATE table SET column1 = value1 WHERE condition;\nExample:\nUPDATE Students SET Age = 18 WHERE StudentID = 101;\nWARNING: Without WHERE, updates ALL records!"
+        },
+        {
+          "question": "What is a DELETE query in SQL?",
+          "answer": "Removes records from a table.\nSyntax: DELETE FROM table WHERE condition;\nExample:\nDELETE FROM Students WHERE StudentID = 101;\nWARNING: DELETE FROM Students; (without WHERE) deletes ALL records!"
+        },
+        {
+          "question": "What are SQL JOIN operations?",
+          "answer": "Combines rows from two or more tables based on related columns.\nINNER JOIN: Returns matching records in both tables\nLEFT JOIN: All from left table + matching from right\nRIGHT JOIN: All from right table + matching from left\nExample: SELECT * FROM Students INNER JOIN Enrollments ON Students.ID = Enrollments.StudentID;"
+        },
+        {
+          "question": "What is database normalization?",
+          "answer": "The process of organizing database tables to reduce redundancy and improve data integrity. Involves dividing large tables into smaller ones and defining relationships. Reduces data duplication, saves storage, prevents update anomalies."
+        },
+        {
+          "question": "What is First Normal Form (1NF)?",
+          "answer": "Requirements:\n1. Each cell contains only atomic (single) values\n2. No repeating groups or arrays\n3. Each record is unique\nExample violation: A 'Phone' column containing '123, 456, 789'\nFix: Create separate row for each phone number or separate table."
+        },
+        {
+          "question": "What is Second Normal Form (2NF)?",
+          "answer": "Requirements:\n1. Must be in 1NF\n2. All non-key attributes must depend on the entire primary key (no partial dependencies)\nApplies to tables with composite keys. If attribute depends on only part of key, move it to separate table.\nExample: In (StudentID, CourseID, StudentName), StudentName depends only on StudentID, not the full key."
+        },
+        {
+          "question": "What is Third Normal Form (3NF)?",
+          "answer": "Requirements:\n1. Must be in 2NF\n2. No transitive dependencies (non-key attributes must not depend on other non-key attributes)\nExample violation: Table has StudentID, CourseID, InstructorName where InstructorName depends on CourseID (not StudentID)\nFix: Move InstructorName to separate Courses table."
+        },
+        {
+          "question": "What are the benefits of normalization?",
+          "answer": "1. Reduces data redundancy (less duplicate data)\n2. Improves data integrity (consistency)\n3. Easier to maintain and update\n4. Prevents update anomalies\n5. Saves storage space\n6. Makes database more flexible for queries"
+        },
+        {
+          "question": "What are update anomalies?",
+          "answer": "Problems in poorly designed databases:\nInsertion anomaly: Cannot add data without other data\nDeletion anomaly: Deleting data unintentionally removes other data\nUpdate anomaly: Updating data in one place but not others causes inconsistency\nNormalization prevents these issues."
+        },
+        {
+          "question": "What is a database transaction?",
+          "answer": "A sequence of database operations treated as a single unit of work. Must follow ACID properties: Atomicity (all or nothing), Consistency (valid state), Isolation (concurrent transactions don't interfere), Durability (committed changes persist). Example: bank transfer (debit + credit must both succeed or both fail)."
+        },
+        {
+          "question": "What are ACID properties?",
+          "answer": "Atomicity: Transaction fully completes or fully fails (no partial)\nConsistency: Database remains in valid state before/after\nIsolation: Concurrent transactions don't interfere with each other\nDurability: Committed changes persist even after system failure\nEnsures reliable database transactions."
+        },
+        {
+          "question": "What is referential integrity?",
+          "answer": "A database rule ensuring relationships between tables remain consistent. Foreign key values must either match a primary key in referenced table or be NULL. Prevents orphaned records. Example: Can't enroll student in course if StudentID doesn't exist in Students table."
+        }
+      ]
+    },
+    {
+      "name": "16. Web Technologies",
+      "flashcards": [
+        {
+          "question": "What is HTML?",
+          "answer": "HyperText Markup Language - the standard markup language for creating web pages. Uses tags to structure content (headings, paragraphs, links, images, etc.). Not a programming language - just defines structure and content. Example: <h1>Title</h1>, <p>Paragraph</p>"
+        },
+        {
+          "question": "What are common HTML tags?",
+          "answer": "<html> - root element\n<head> - metadata, title, links to CSS/JS\n<body> - visible page content\n<h1> to <h6> - headings\n<p> - paragraph\n<a href=\"url\"> - hyperlink\n<img src=\"image.jpg\"> - image\n<div> - division/container\n<ul>, <ol>, <li> - lists\n<table>, <tr>, <td> - tables"
+        },
+        {
+          "question": "What is CSS?",
+          "answer": "Cascading Style Sheets - a language for styling and formatting HTML content. Controls appearance: colors, fonts, layouts, spacing, positioning. Separates presentation from content. Can be inline, internal (<style> tag), or external (.css file). Example: h1 { color: blue; font-size: 24px; }"
+        },
+        {
+          "question": "What are the three ways to include CSS?",
+          "answer": "1. Inline: <p style=\"color: red;\">Text</p>\n2. Internal: <style> p { color: red; } </style> in <head>\n3. External: <link rel=\"stylesheet\" href=\"style.css\"> in <head>\nBest practice: External CSS for maintainability and reusability."
+        },
+        {
+          "question": "What is JavaScript?",
+          "answer": "A high-level, interpreted programming language for web development. Adds interactivity and dynamic behavior to websites (form validation, animations, user interactions, DOM manipulation). Runs in browser (client-side) or server (Node.js). Example: button clicks, content updates without page reload."
+        },
+        {
+          "question": "What is the difference between client-side and server-side?",
+          "answer": "Client-side: Code runs in user's browser (HTML, CSS, JavaScript). Immediate response, reduces server load, but visible to users (security risk for sensitive operations).\nServer-side: Code runs on web server (PHP, Python, Node.js, Java). Secure, accesses databases, processes data, generates dynamic HTML sent to client."
+        },
+        {
+          "question": "What is the client-server model?",
+          "answer": "A network architecture where clients (browsers) request resources/services from servers.\n1. Client sends HTTP request to server\n2. Server processes request\n3. Server sends HTTP response (HTML, data)\n4. Client displays/processes response\nEnables distributed computing and web applications."
+        },
+        {
+          "question": "What is HTTP?",
+          "answer": "HyperText Transfer Protocol - the protocol for transmitting web pages and data over the internet. Stateless request-response protocol. Uses methods:\nGET (retrieve data)\nPOST (submit data)\nPUT (update)\nDELETE (remove)\nRuns on port 80."
+        },
+        {
+          "question": "What is HTTPS?",
+          "answer": "HTTP Secure - encrypted version of HTTP using SSL/TLS. Encrypts data between client and server, protecting sensitive information (passwords, credit cards). Shows padlock in browser. Essential for security. Runs on port 443. Uses certificates to verify server identity."
+        },
+        {
+          "question": "What are HTTP status codes?",
+          "answer": "Server responses indicating request outcome:\n200 OK - Success\n301 Moved Permanently - Redirect\n400 Bad Request - Client error\n401 Unauthorized - Authentication required\n403 Forbidden - Access denied\n404 Not Found - Resource doesn't exist\n500 Internal Server Error - Server problem\n503 Service Unavailable"
+        },
+        {
+          "question": "What is a URL?",
+          "answer": "Uniform Resource Locator - web address specifying resource location.\nFormat: protocol://domain:port/path?query#fragment\nExample: https://www.example.com:443/page.html?id=123#section\nprotocol: https\ndomain: www.example.com\nport: 443 (optional, default for HTTPS)\npath: /page.html\nquery: ?id=123\nfragment: #section"
+        },
+        {
+          "question": "What is the DOM (Document Object Model)?",
+          "answer": "A programming interface representing HTML/XML documents as a tree structure. Each element is a node that can be accessed and manipulated with JavaScript. Allows dynamic page updates without reload. Example: document.getElementById('title').innerHTML = 'New Title';"
+        },
+        {
+          "question": "What are cookies?",
+          "answer": "Small text files stored on user's computer by websites. Store user preferences, session data, tracking information. Sent with every request to same domain. Types: Session cookies (temporary), Persistent cookies (expire date). Privacy concerns led to GDPR cookie consent requirements."
+        },
+        {
+          "question": "What is a web server?",
+          "answer": "Software/hardware that stores, processes, and delivers web pages to clients. Handles HTTP requests, serves static files (HTML, CSS, images), executes server-side code, manages databases. Examples: Apache, Nginx, IIS, Node.js. Listens on ports 80 (HTTP) or 443 (HTTPS)."
+        },
+        {
+          "question": "What is responsive web design?",
+          "answer": "Designing websites that adapt to different screen sizes and devices (desktop, tablet, mobile). Uses flexible layouts, media queries, fluid grids, scalable images. Ensures good user experience across all devices. Example: @media (max-width: 768px) { /* mobile styles */ }"
+        },
+        {
+          "question": "What are server-side scripting languages?",
+          "answer": "Languages that run on web servers to generate dynamic content:\nPHP - widely used, WordPress\nPython - Django, Flask frameworks\nJavaScript - Node.js\nRuby - Rails framework\nJava - servlets, JSP\nProcess forms, access databases, generate personalized content, handle authentication."
+        },
+        {
+          "question": "What is AJAX?",
+          "answer": "Asynchronous JavaScript and XML - technique for updating parts of web page without reloading entire page. Uses JavaScript to send/receive data from server in background. Creates faster, more interactive web applications. Example: auto-complete search, live notifications, infinite scroll. Modern version uses JSON instead of XML."
+        },
+        {
+          "question": "What is JSON?",
+          "answer": "JavaScript Object Notation - lightweight data interchange format. Human-readable text format for structured data. Language-independent but uses JavaScript syntax. Commonly used for APIs and web services.\nExample: {\"name\": \"Alice\", \"age\": 17, \"grades\": [90, 85, 92]}"
+        },
+        {
+          "question": "What is an API (Application Programming Interface)?",
+          "answer": "A set of rules/protocols allowing different software applications to communicate. Web APIs (REST, GraphQL) enable data exchange between client and server using HTTP. Returns data (usually JSON/XML) instead of HTML. Example: Weather API provides weather data to apps/websites."
+        },
+        {
+          "question": "What is the difference between GET and POST?",
+          "answer": "GET:\n- Retrieves data from server\n- Parameters in URL (visible)\n- Can be bookmarked/cached\n- Limited data size\n- Idempotent (safe to repeat)\n\nPOST:\n- Sends data to server\n- Parameters in request body (not visible in URL)\n- Cannot be bookmarked\n- No size limit\n- Not idempotent (creates/modifies data)"
+        }
+      ]
     }
   ],
-  "total_flashcards": 175,
+  "total_flashcards": 235,
   "study_tips": [
     "Review each category systematically",
     "Practice drawing diagrams for CPU architecture and fetch-execute cycle",

@@ -1,0 +1,49 @@
+# 1.2 Software and Software Development
+# 20 flashcards
+
+What is an operating system (OS)?	System software that manages computer hardware and software resources, provides common services for programs, and acts as an interface between users and hardware. Examples: Windows, macOS, Linux, Android.
+What are the main functions of an operating system?	1. Memory management
+2. Processor/CPU scheduling
+3. File management
+4. Device/peripheral management
+5. User interface provision
+6. Security and access control
+7. Error handling
+What is process scheduling?	The method by which the operating system decides which process gets CPU time and in what order. Essential for multitasking and efficient resource utilization.
+What is Round Robin scheduling?	A scheduling algorithm where each process gets a fixed time slice (quantum) of CPU time in turn. If not completed in that time, it goes to the back of the queue. Fair but may not be efficient for short processes.
+What is First Come First Served (FCFS) scheduling?	Processes are executed in the order they arrive. Simple but can lead to convoy effect where short processes wait for long ones. Non-preemptive.
+What is Shortest Job First (SJF) scheduling?	The process with the shortest execution time is selected next. Minimizes average waiting time but requires knowing execution times in advance and can cause starvation of longer processes.
+What is Multi-Level Feedback Queue scheduling?	Uses multiple queues with different priorities. Processes can move between queues based on behavior. CPU-intensive processes move to lower priority queues while I/O-bound processes stay in higher priority queues. Flexible and adaptive.
+What is the difference between preemptive and non-preemptive scheduling?	Preemptive: OS can interrupt a running process and allocate CPU to another process (e.g., Round Robin).
+Non-preemptive: Once a process starts, it runs until completion or voluntarily yields CPU (e.g., FCFS).
+What is interrupt handling?	The process of responding to signals (interrupts) from hardware or software. The CPU temporarily stops current execution, saves its state, handles the interrupt, then resumes. Examples: keyboard input, mouse click, timer, hardware errors.
+What are the stages of the software development lifecycle?	1. Analysis - understand problem and requirements
+2. Design - plan solution architecture
+3. Implementation - write code
+4. Testing - find and fix bugs
+5. Evaluation - assess if requirements met
+6. Maintenance - updates and bug fixes
+What is a high-level programming language?	A programming language with abstraction from hardware details, using English-like commands. Easier to learn and write but must be translated. Examples: Python, Java, C++, JavaScript. Portable across different systems.
+What is a low-level programming language?	A programming language close to machine code with little abstraction. Hard to learn but offers fine control over hardware.
+Assembly: one-to-one mapping with machine code
+Machine code: binary instructions executed directly by CPU
+What is a compiler?	A translator that converts entire high-level source code into machine code before execution. Creates executable file. Advantages: fast execution, code optimization, no translator needed at runtime. Used by C++, C.
+What is an interpreter?	A translator that converts high-level code line-by-line during execution. No executable created. Advantages: easier debugging, instant execution, cross-platform. Disadvantages: slower execution. Used by Python, JavaScript (though modern ones use JIT).
+What are integrated development environments (IDEs)?	Software applications providing comprehensive facilities for development:
+- Code editor with syntax highlighting
+- Debugger for finding errors
+- Compiler/interpreter
+- Auto-completion
+- Project management
+Examples: Visual Studio, PyCharm, IntelliJ
+What is syntax in programming?	The set of rules that define the correct structure and format of code in a programming language. Syntax errors prevent code from running. Examples: missing semicolons, incorrect indentation, mismatched brackets.
+What are variables in programming?	Named storage locations in memory that hold data values which can change during program execution. Must have: identifier (name), data type, value. Example: age = 18
+What are constants in programming?	Named values that cannot be changed during program execution. Used for values that should remain fixed. Examples: PI = 3.14159, MAX_USERS = 100. Improves code readability and maintainability.
+What are the three programming constructs?	1. Sequence: instructions executed in order, line by line
+2. Selection: decisions using IF/ELSE statements
+3. Iteration: repetition using loops (FOR, WHILE)
+What is testing in software development?	The process of finding errors and verifying software meets requirements. Types:
+- Unit testing: individual components
+- Integration testing: components together
+- System testing: entire system
+- Acceptance testing: meets user needs

@@ -1,0 +1,142 @@
+# 1.4 Data Types, Data Structures and Algorithms
+# 44 flashcards
+
+What are primitive data types?	Basic data types built into programming languages:
+- Integer: whole numbers
+- Real/Float: decimal numbers
+- Boolean: True/False
+- Character: single character
+- String: sequence of characters
+What is an integer data type?	A data type for whole numbers (positive, negative, or zero) without decimal points. Examples: -5, 0, 42, 1000. Fixed size in memory (e.g., 16-bit, 32-bit, 64-bit).
+What is a real/float data type?	A data type for numbers with decimal points. Uses floating-point representation. Examples: 3.14, -0.5, 2.71828. May have precision limitations due to binary representation.
+What is a boolean data type?	A data type with only two possible values: True or False (1 or 0). Used for logical operations and conditions. Typically stored in 1 byte though only needs 1 bit.
+What is a character data type?	A data type representing a single character, stored using a character encoding system like ASCII or Unicode. Examples: 'A', '7', '@'. Typically 1 byte (ASCII) or 2+ bytes (Unicode).
+What is a string data type?	A sequence of characters treated as a single unit. Can be of variable or fixed length. Examples: "Hello", "Computer Science", "". May be represented as arrays of characters.
+What is ASCII encoding?	American Standard Code for Information Interchange. A 7-bit character encoding (0-127) representing English letters, digits, and symbols. Each character has a unique code (e.g., 'A' = 65, '0' = 48).
+What is Unicode encoding?	A universal character encoding standard supporting characters from all writing systems. UTF-8 uses 1-4 bytes per character, UTF-16 uses 2-4 bytes, UTF-32 uses 4 bytes. Backward compatible with ASCII.
+What is binary number system?	Base-2 number system using only two digits: 0 and 1. Each digit is a 'bit'. Computers use binary because it maps to electronic states (on/off). Example: 1011₂ = 11₁₀
+What is hexadecimal number system?	Base-16 number system using digits 0-9 and letters A-F (10-15). Used as shorthand for binary. Each hex digit represents 4 binary bits. Example: FF₁₆ = 255₁₀ = 11111111₂
+How do you convert binary to denary (decimal)?	Multiply each bit by its position value (powers of 2) and sum:
+1011₂ = (1×8) + (0×4) + (1×2) + (1×1) = 8 + 0 + 2 + 1 = 11₁₀
+Positions from right: 2⁰, 2¹, 2², 2³...
+How do you convert denary to binary?	Repeatedly divide by 2 and record remainders:
+11 ÷ 2 = 5 remainder 1
+5 ÷ 2 = 2 remainder 1
+2 ÷ 2 = 1 remainder 0
+1 ÷ 2 = 0 remainder 1
+Read remainders bottom-to-top: 1011₂
+What is binary addition?	Rules:
+0 + 0 = 0
+0 + 1 = 1
+1 + 0 = 1
+1 + 1 = 10 (0, carry 1)
+1 + 1 + 1 = 11 (1, carry 1)
+Carry bits to next column like decimal addition.
+What is two's complement?	A method for representing signed (positive and negative) integers in binary. To negate: invert all bits then add 1. The leftmost bit indicates sign (0=positive, 1=negative). Allows simple addition circuitry for positive and negative numbers.
+What is overflow in binary arithmetic?	When the result of a calculation is too large to be represented in the available number of bits. The carry bit extends beyond the available space, causing an incorrect result. Example: adding two 8-bit numbers resulting in 9 bits.
+What is Boolean algebra?	A mathematical system for manipulating logical values (True/False, 1/0) using logical operations. Fundamental to digital circuit design and computer logic. Named after George Boole.
+What is the AND operation?	A logical operation that returns True only if both inputs are True.
+Symbol: ∧ or •
+Truth table:
+0 AND 0 = 0
+0 AND 1 = 0
+1 AND 0 = 0
+1 AND 1 = 1
+What is the OR operation?	A logical operation that returns True if at least one input is True.
+Symbol: ∨ or +
+Truth table:
+0 OR 0 = 0
+0 OR 1 = 1
+1 OR 0 = 1
+1 OR 1 = 1
+What is the NOT operation?	A logical operation that inverts the input (returns opposite value).
+Symbol: ¬ or bar over variable
+Truth table:
+NOT 0 = 1
+NOT 1 = 0
+What is the XOR operation?	Exclusive OR - returns True if inputs are different.
+Symbol: ⊕
+Truth table:
+0 XOR 0 = 0
+0 XOR 1 = 1
+1 XOR 0 = 1
+1 XOR 1 = 0
+What is a logic gate?	An electronic circuit that performs a Boolean operation on input signals to produce an output. Building blocks of digital circuits. Types: AND, OR, NOT, NAND, NOR, XOR gates.
+What is a truth table?	A table showing all possible input combinations and their corresponding outputs for a logical expression or circuit. Used to analyze and design logic circuits.
+What is De Morgan's Law?	Rules for simplifying Boolean expressions:
+1. NOT(A AND B) = NOT A OR NOT B
+2. NOT(A OR B) = NOT A AND NOT B
+Useful for circuit simplification and optimization.
+What is an array?	A data structure storing multiple values of the same data type in contiguous memory locations, accessed by index. Fixed size, fast access (O(1)), index starts at 0 in most languages. Example: scores[0], scores[1], scores[2]
+What are the advantages of arrays?	1. Fast access to elements using index (O(1))
+2. Memory efficient for fixed-size data
+3. Simple to use and understand
+4. Good cache locality (elements stored together)
+What are the disadvantages of arrays?	1. Fixed size - cannot grow/shrink
+2. Insertion/deletion is slow (requires shifting)
+3. Memory waste if not full
+4. All elements must be same type
+What is a record/struct?	A data structure that groups related data items of different types under one name. Each item is called a field. Example: Student record with name (string), age (integer), grade (char).
+What is a list?	A dynamic data structure storing ordered elements that can grow/shrink. Unlike arrays, size is flexible. Elements accessed by index. Supports insertion, deletion, searching. Can be implemented as array or linked list.
+What is a stack?	A Last-In-First-Out (LIFO) data structure. Elements added and removed from the same end (top). Operations:
+- Push: add to top
+- Pop: remove from top
+- Peek: view top without removing
+Uses: function calls, undo operations, expression evaluation
+What is a queue?	A First-In-First-Out (FIFO) data structure. Elements added at rear, removed from front. Operations:
+- Enqueue: add to rear
+- Dequeue: remove from front
+- Peek: view front
+Uses: printer queues, task scheduling, breadth-first search
+What is a circular queue?	A queue implementation where the last position connects back to the first position, forming a circle. Efficiently uses fixed memory space by wrapping around. Prevents wasted space in linear queue implementation.
+What is a linked list?	A data structure where elements (nodes) are stored non-contiguously, each containing data and a pointer/reference to the next node. Dynamic size, efficient insertion/deletion, but slower access (O(n)). Types: singly, doubly, circular.
+What is an algorithm?	A step-by-step sequence of instructions or rules for solving a problem or completing a task. Must be: unambiguous, executable, finite (terminates). Can be represented using pseudocode, flowcharts, or code.
+What is computational thinking?	A problem-solving approach involving:
+1. Decomposition - breaking problems into smaller parts
+2. Pattern recognition - identifying similarities
+3. Abstraction - focusing on important details
+4. Algorithm design - creating step-by-step solutions
+What is linear search?	A searching algorithm that checks each element sequentially until target is found or end is reached.
+Time complexity: O(n)
+Advantages: works on unsorted data, simple
+Disadvantages: slow for large datasets
+What is binary search?	An efficient searching algorithm for sorted data. Repeatedly divides search space in half by comparing target with middle element.
+Time complexity: O(log n)
+Requires: sorted data
+Much faster than linear search for large datasets
+Describe the binary search algorithm steps	1. Find middle element
+2. If target equals middle, found!
+3. If target < middle, search left half
+4. If target > middle, search right half
+5. Repeat until found or search space empty
+What is bubble sort?	A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if in wrong order. Continues until no swaps needed.
+Time complexity: O(n²)
+Simple but inefficient for large datasets
+What is insertion sort?	A sorting algorithm that builds sorted array one element at a time. Takes each element and inserts it into its correct position in the sorted portion.
+Time complexity: O(n²)
+Efficient for small or nearly-sorted data
+What is merge sort?	A divide-and-conquer sorting algorithm. Recursively divides array in half, sorts each half, then merges sorted halves.
+Time complexity: O(n log n)
+Stable, predictable, but requires extra memory
+Describe the merge sort algorithm steps	1. Divide array into two halves
+2. Recursively sort each half
+3. Merge the two sorted halves:
+   - Compare first elements of each
+   - Take smaller, add to result
+   - Repeat until all merged
+What is Big O notation?	A mathematical notation describing algorithm efficiency by analyzing how runtime or space grows with input size (n). Focuses on worst-case scenario.
+O(1): constant
+O(log n): logarithmic
+O(n): linear
+O(n log n): linearithmic
+O(n²): quadratic
+Compare sorting algorithm efficiency	Bubble Sort: O(n²) - slow, simple
+Insertion Sort: O(n²) - good for small/nearly-sorted
+Merge Sort: O(n log n) - fast, needs extra space
+Quick Sort: O(n log n) average - fast, in-place
+Best for large data: Merge or Quick Sort
+What is a trace table?	A table showing how variable values change step-by-step during algorithm execution. Used for:
+- Understanding algorithm behavior
+- Finding errors
+- Tracking loop iterations
+Columns: step number, variables, conditions

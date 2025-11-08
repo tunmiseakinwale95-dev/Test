@@ -1,0 +1,67 @@
+# 1.1 Characteristics of Contemporary Processors, Input, Output and Storage Devices
+# 38 flashcards
+
+What is the Von Neumann architecture?	A computer architecture where both program instructions and data are stored in the same memory. It consists of a CPU, memory unit, and input/output mechanisms, with a single shared bus for data and instructions.
+What are the main components of the CPU?	1. Arithmetic Logic Unit (ALU)
+2. Control Unit (CU)
+3. Registers (including PC, ACC, MAR, MDR, CIR)
+4. Cache memory
+What is the function of the Arithmetic Logic Unit (ALU)?	The ALU performs arithmetic operations (addition, subtraction) and logical operations (AND, OR, NOT, comparisons) on data.
+What is the function of the Control Unit (CU)?	The Control Unit coordinates and controls all operations within the CPU. It decodes instructions, sends control signals to other components, and manages the fetch-decode-execute cycle.
+What is the Program Counter (PC)?	A register that holds the memory address of the next instruction to be fetched and executed. It is automatically incremented after each instruction fetch.
+What is the Accumulator (ACC)?	A register that stores the results of calculations performed by the ALU. It holds intermediate results during processing.
+What is the Memory Address Register (MAR)?	A register that holds the memory address of the data or instruction that needs to be accessed (read from or written to).
+What is the Memory Data Register (MDR)?	A register that temporarily stores data that has been read from memory or data that is about to be written to memory. Also known as Memory Buffer Register (MBR).
+What is the Current Instruction Register (CIR)?	A register that holds the current instruction being decoded and executed. It stores the instruction after it has been fetched from memory.
+What is cache memory?	A small amount of very fast memory located inside or close to the CPU that stores frequently accessed data and instructions to speed up processing. It sits between the CPU and main memory.
+What are the levels of cache memory?	L1 Cache: Smallest and fastest, built into CPU cores
+L2 Cache: Larger than L1, may be shared between cores
+L3 Cache: Largest and slowest cache, shared across all cores
+What is the Harvard architecture?	A computer architecture that has separate memory storage and pathways for instructions and data, allowing simultaneous access to both. Used in embedded systems and microcontrollers.
+What is the Fetch-Decode-Execute Cycle?	The fundamental process by which a CPU retrieves, interprets, and executes instructions. It repeats continuously while the computer is running.
+What happens during the FETCH stage?	1. Address from PC is copied to MAR
+2. Instruction at that address is copied to MDR
+3. Instruction is copied from MDR to CIR
+4. PC is incremented to point to next instruction
+What happens during the DECODE stage?	The Control Unit decodes the instruction in the CIR, determining what operation needs to be performed and what data is required.
+What happens during the EXECUTE stage?	The instruction is carried out. This may involve:
+- The ALU performing calculations
+- Data being moved between registers
+- Reading/writing to memory
+- Jumping to a different instruction
+What factors affect CPU performance?	1. Clock Speed (measured in GHz)
+2. Number of cores
+3. Cache size and type
+4. Word length/bus width
+5. Architecture type
+What is clock speed?	The number of fetch-decode-execute cycles the CPU can complete per second, measured in Hertz (Hz). A 3.5 GHz processor completes 3.5 billion cycles per second.
+What are cores in a CPU?	Independent processing units within a single CPU chip. Multi-core processors can execute multiple instructions simultaneously (parallel processing), improving performance for multi-threaded applications.
+What is word length/bus width?	The number of bits that can be transferred simultaneously through the data bus or processed in a single operation. Common sizes are 32-bit or 64-bit.
+What is CISC (Complex Instruction Set Computer)?	A processor architecture with a large instruction set, where single instructions can execute complex operations. Examples: Intel x86, AMD processors. More complex circuitry but fewer instructions needed for programs.
+What is RISC (Reduced Instruction Set Computer)?	A processor architecture with a smaller, simpler instruction set where each instruction executes in a single clock cycle. Examples: ARM processors. Simpler circuitry, better for pipelining, more energy efficient.
+What are the advantages of RISC?	1. Simpler instructions execute faster
+2. Better for pipelining
+3. More energy efficient
+4. Lower heat generation
+5. Lower cost to manufacture
+What are the advantages of CISC?	1. Fewer instructions needed for tasks
+2. More memory efficient (smaller programs)
+3. Better for complex operations
+4. Easier to write assembly code
+What is pipelining?	A technique where multiple instructions are overlapped in execution. While one instruction is being executed, the next is being decoded, and another is being fetched. This increases throughput and CPU efficiency.
+What is parallel processing?	The simultaneous execution of multiple instructions or tasks using multiple processors or cores. Improves performance for applications designed to use multiple threads.
+What is a GPU (Graphics Processing Unit)?	A specialized processor designed for parallel processing of graphics and visual data. Contains thousands of small cores optimized for handling multiple tasks simultaneously, useful for graphics rendering, AI, and scientific computing.
+What is a multi-core processor?	A single CPU chip containing multiple independent processing cores, each capable of executing instructions. Allows true parallel processing and improved multitasking performance.
+What are input devices? Give examples.	Devices that allow data to enter the computer system.
+Examples: Keyboard, mouse, touchscreen, microphone, webcam, scanner, barcode reader, sensors (temperature, pressure, motion)
+What are output devices? Give examples.	Devices that allow data to leave the computer system.
+Examples: Monitor/display, printer, speakers, headphones, projector, actuators (motors, LEDs)
+What is primary storage?	Memory directly accessible by the CPU, including RAM and ROM. It is fast but volatile (except ROM). Used for currently running programs and data.
+What is RAM (Random Access Memory)?	Volatile memory that stores currently running programs and data in use. Data is lost when power is turned off. Fast read/write speeds. Can be accessed in any order.
+What is ROM (Read Only Memory)?	Non-volatile memory that stores permanent instructions (like BIOS/firmware). Data persists when power is off. Cannot be easily modified. Contains boot-up instructions.
+What is secondary storage? Give examples.	Non-volatile storage for long-term data persistence. Slower than primary storage but has much larger capacity.
+Examples: Hard Disk Drive (HDD), Solid State Drive (SSD), USB flash drives, optical discs (CD, DVD, Blu-ray), magnetic tape
+What is an HDD (Hard Disk Drive)?	A magnetic storage device using spinning platters coated with magnetic material. Read/write heads access data. Large capacity, relatively cheap, but slower than SSDs and has moving parts that can fail.
+What is an SSD (Solid State Drive)?	A storage device using flash memory (no moving parts). Much faster than HDDs, more reliable, silent operation, but more expensive per GB. Uses NAND flash memory.
+What is virtual memory?	A memory management technique where secondary storage (hard drive/SSD) is used as an extension of RAM when physical RAM is full. Slower than RAM but allows running more programs than RAM capacity would normally allow.
+What are optical storage devices?	Storage media that use laser light to read/write data on discs. Types: CD (700MB), DVD (4.7-8.5GB), Blu-ray (25-50GB). Portable and durable but slower than SSDs and can be scratched.

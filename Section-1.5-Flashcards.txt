@@ -1,0 +1,48 @@
+# 1.5 Legal, Moral, Cultural and Ethical Issues
+# 11 flashcards
+
+What is the Data Protection Act?	UK law governing how personal data is processed and stored. Key principles: data must be used fairly, lawfully, accurately, kept secure, and only for specified purposes. Gives individuals rights over their personal data.
+What is the Computer Misuse Act 1990?	UK law making it illegal to:
+1. Unauthorized access to computer material (hacking)
+2. Unauthorized access with intent to commit further offenses
+3. Unauthorized modification of computer material (malware, viruses)
+Penalties include fines and imprisonment.
+What is the Copyright, Designs and Patents Act 1988?	UK law protecting intellectual property rights in software, digital media, and creative works. Makes it illegal to copy, modify, or distribute copyrighted material without permission. Protects creators' rights.
+What are open source licenses?	Licenses allowing software source code to be freely used, modified, and distributed. Examples: GPL, MIT, Apache. Benefits: community collaboration, transparency, free to use. Examples: Linux, Firefox, Python.
+What are proprietary licenses?	Licenses where software source code is kept private and usage is restricted. Users typically pay for licenses. Vendor controls updates and features. Examples: Windows, Microsoft Office, Adobe Photoshop.
+What are ethical issues in computing?	Questions about right and wrong behavior:
+- Privacy invasion (surveillance, data collection)
+- Security responsibilities
+- Algorithmic bias and fairness
+- AI decision-making accountability
+- Digital divide and access inequality
+- Environmental impact
+What are cultural issues in computing?	How technology affects different cultures and societies:
+- Language barriers in software
+- Cultural representation in AI/algorithms
+- Global vs local censorship
+- Digital cultural preservation
+- Different privacy expectations across cultures
+- Technology adoption rates
+What are environmental issues in computing?	Technology's impact on the environment:
+- E-waste from discarded devices
+- Energy consumption of data centers
+- Carbon footprint of manufacturing
+- Non-renewable resource use
+- Solutions: recycling programs, energy-efficient design, cloud optimization
+What is the digital divide?	The gap between those with access to modern technology/internet and those without. Factors: income, geography, age, education. Creates inequality in opportunities for education, employment, services, and information access.
+What are privacy concerns in modern computing?	Issues around personal data collection and use:
+- Social media data harvesting
+- Location tracking
+- Targeted advertising
+- Data breaches
+- Government surveillance
+- Facial recognition
+- Cookies and online tracking
+What is cybersecurity?	Protecting computer systems, networks, and data from theft, damage, or unauthorized access. Involves:
+- Strong passwords and authentication
+- Encryption
+- Firewalls and antivirus
+- Regular updates
+- User education
+- Backup systems
